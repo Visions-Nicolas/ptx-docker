@@ -1,0 +1,50 @@
+[
+  {
+    "_id": {"$oid": "66d18724ee71f9f096bae810"},
+    "associatedOrganisation": "66d18724ee71f9f096bae80f",
+    "dataspaceConnectorAppKey": "",
+    "dataspaceEndpoint": "",
+    "did": null,
+    "legalName": "Test-DataProvider",
+    "legalPerson": {
+      "registrationNumber": "",
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "logo": "",
+    "permissions": [],
+    "plan": {},
+    "schema_version": "1",
+    "termsAndConditions": ""
+  },
+  {
+    "_id": {"$oid": "66d18a1dee71f9f096baec08"},
+    "associatedOrganisation": "66d18a1dee71f9f096baec07",
+    "dataspaceConnectorAppKey": "",
+    "dataspaceEndpoint": "",
+    "did": null,
+    "legalName": "Test-DataConsumer",
+    "legalPerson": {
+      "registrationNumber": "",
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "logo": "",
+    "permissions": [],
+    "plan": {},
+    "schema_version": "1",
+    "termsAndConditions": ""
+  }
+]

@@ -1,0 +1,12 @@
+FROM node:lts
+
+WORKDIR /usr/src/app
+
+RUN git clone https://github.com/Prometheus-X-association/catalog-registry.git .
+
+RUN npm install -g pnpm
+
+RUN pnpm install
+
+# Command to run the application
+CMD ["sh", "-c", "npm run db:init && npm run build && npm run start"]

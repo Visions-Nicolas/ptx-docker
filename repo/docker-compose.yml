@@ -1,0 +1,203 @@
+services:
+
+  mongodb:
+    container_name: "ptx-mongodb"
+    build:
+      context: .
+      dockerfile: images/mongodb/dockerfile
+#    Uncomment to connect mongodb container to mongo compass or another service
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+    profiles:
+      - db  
+    networks:
+      - ptx-main
+
+  mongodb-seed:
+    container_name: "ptx-mongodb-seed"
+    build: ./images/mongodb-seed
+    environment:
+      CATALOG_REGISTRY_MONGO_DATABASE: ${CATALOG_REGISTRY_MONGO_DATABASE}
+      CATALOG_MONGO_DATABASE: ${CATALOG_MONGO_DATABASE}
+      CONTRACT_MONGO_DATABASE: ${CONTRACT_MONGO_DATABASE}
+      CONSENT_MONGO_DATABASE: ${CONSENT_MONGO_DATABASE}
+      PROVIDER_PDC_DATABASE: ${PROVIDER_PDC_DATABASE}
+      CONSUMER_PDC_DATABASE: ${CONSUMER_PDC_DATABASE}
+    depends_on:
+      - mongodb
+    restart: no
+    profiles:
+      - db
+    networks:
+      - ptx-main
+
+  catalog-registry:
+    container_name: "ptx-catalog-registry"
+    build:
+      context: .
+      dockerfile: images/registry/dockerfile
+    ports:
+      - "${CATALOG_REGISTRY_BINDING_PORT}:${CATALOG_REGISTRY_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    environment:
+      API_KEY: ${CATALOG_REGISTRY_API_KEY}
+      NODE_ENV: ${CATALOG_REGISTRY_NODE_ENV}
+      PORT: ${CATALOG_REGISTRY_PORT}
+      MONGO_USERNAME: ${CATALOG_REGISTRY_MONGO_USERNAME}
+      MONGO_PASSWORD: ${CATALOG_REGISTRY_MONGO_PASSWORD}
+      API_URL: ${CATALOG_REGISTRY_API_URL}
+      JOB_TIMEZONE: ${CATALOG_REGISTRY_JOB_TIMEZONE}
+      MONGO_HOST: ${CATALOG_REGISTRY_MONGO_HOST}
+      MONGO_PORT: ${CATALOG_REGISTRY_MONGO_PORT}
+      MONGO_DATABASE: ${CATALOG_REGISTRY_MONGO_DATABASE}
+    profiles:
+      - core
+    networks:
+      - ptx-main
+
+  catalog-api:
+    container_name: "ptx-catalog-api"
+    build:
+      context: .
+      dockerfile: images/catalog/dockerfile
+    ports:
+      - "${CATALOG_BINDING_PORT}:${CATALOG_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    environment:
+      NODE_ENV: ${CATALOG_NODE_ENV}
+      PORT: ${CATALOG_PORT}
+      MONGO_USERNAME: ${CATALOG_MONGO_USERNAME}
+      MONGO_PASSWORD: ${CATALOG_MONGO_PASSWORD}
+      MONGO_PORT: ${CATALOG_MONGO_PORT}
+      MONGO_HOST: ${CATALOG_MONGO_HOST}
+      MONGO_DATABASE: ${CATALOG_MONGO_DATABASE}
+      API_URL: ${CATALOG_API_URL}
+      JWT_SECRET_KEY: ${CATALOG_JWT_SECRET_KEY}
+      SALT_ROUNDS: ${CATALOG_SALT_ROUNDS}
+      CONTRACT_SERVICE_ENDPOINT: ${CATALOG_CONTRACT_SERVICE_ENDPOINT}
+      API_PREFIX: ${CATALOG_API_PREFIX}
+    profiles:
+      - core
+    networks:
+      - ptx-main
+
+  contract-manager:
+    container_name: "ptx-contract-manager"
+    build:
+      context: .
+      dockerfile: images/contract/dockerfile
+    ports:
+      - "${CONTRACT_BINDING_PORT}:${CONTRACT_SERVER_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    environment:
+      NODE_ENV: ${CONTRACT_NODE_ENV}
+      MONGO_URL: "mongodb://${CONTRACT_MONGO_HOST}:${CONTRACT_MONGO_PORT}/${CONTRACT_MONGO_DATABASE}"
+      MONGO_TEST_URL: ${CONTRACT_MONGO_TEST_URL}
+      MONGO_USERNAME: ${CONTRACT_MONGO_USERNAME}
+      MONGO_PASSWORD: ${CONTRACT_MONGO_PASSWORD}
+      SERVER_PORT: ${CONTRACT_SERVER_PORT}
+      SECRET_AUTH_KEY: ${CONTRACT_SECRET_AUTH_KEY}
+      SECRET_SESSION_KEY: ${CONTRACT_SECRET_SESSION_KEY}
+      CATALOG_REGISTRY_URL: ${CONTRACT_CATALOG_REGISTRY_URL}
+      SERVER_BASE_URL: ${CONTRACT_SERVER_BASE_URL}
+      CATALOG_REGISTRY_FILE_EXT: ${CONTRACT_CATALOG_REGISTRY_FILE_EXT}
+      LOGS_KEY: ${CONTRACT_LOGS_KEY}
+      USE_CONTRACT_AGENT: ${CONTRACT_USE_CONTRACT_AGENT}
+      CATALOG_AUTHORIZATION_KEY: ${CONTRACT_CATALOG_AUTHORIZATION_KEY}
+    profiles:
+      - core
+    networks:
+      - ptx-main
+
+  consent-manager:
+    container_name: "ptx-consent-manager"
+    build:
+      context: .
+      dockerfile: images/consent/dockerfile
+    ports:
+      - "${CONSENT_BINDING_PORT}:${CONSENT_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    environment:
+      NODE_ENV: ${CONSENT_NODE_ENV}
+      PORT: ${CONSENT_PORT}
+      APP_ENDPOINT: ${CONSENT_APP_ENDPOINT}
+      MONGO_URI: "mongodb://${CONSENT_MONGO_HOST}:${CONSENT_MONGO_PORT}/${CONSENT_MONGO_DATABASE}"
+      MONGO_URI_TEST: ${CONSENT_MONGO_URI_TEST}
+      API_PREFIX: ${CONSENT_API_PREFIX}
+      SALT_ROUNDS: ${CONSENT_SALT_ROUNDS}
+      PDI_ENDPOINT: ${CONSENT_PDI_ENDPOINT}
+      APPLICATION_NAME: ${CONSENT_APPLICATION_NAME}
+      FEDERATED_APPLICATION_IDENTIFIER: ${CONSENT_FEDERATED_APPLICATION_IDENTIFIER}
+      SESSION_COOKIE_NAME: ${CONSENT_SESSION_COOKIE_NAME}
+      SESSION_SECRET: ${CONSENT_SESSION_SECRET}
+      JWT_SECRET_KEY: ${CONSENT_JWT_SECRET_KEY}
+      OAUTH_SECRET_KEY: ${CONSENT_OAUTH_SECRET_KEY}
+      OAUTH_TOKEN_EXPIRES_IN: ${CONSENT_OAUTH_TOKEN_EXPIRES_IN}
+      CONTRACT_SERVICE_BASE_URL: ${CONSENT_CONTRACT_SERVICE_BASE_URL}"
+      WINSTON_LOGS_MAX_FILES: ${CONSENT_WINSTON_LOGS_MAX_FILES}
+      WINSTON_LOGS_MAX_SIZE: ${CONSENT_WINSTON_LOGS_MAX_SIZE}
+      NODEMAILER_HOST: ${CONSENT_NODEMAILER_HOST}
+      NODEMAILER_PORT: ${CONSENT_NODEMAILER_PORT}
+      NODEMAILER_USER: ${CONSENT_NODEMAILER_USER}
+      NODEMAILER_PASS: ${CONSENT_NODEMAILER_PASS}
+      NODEMAILER_FROM_NOREPLY: ${CONSENT_NODEMAILER_FROM_NOREPLY}
+      MANDRILL_ENABLED: ${CONSENT_MANDRILL_ENABLED}
+      MANDRILL_API_KEY: ${CONSENT_MANDRILL_API_KEY}
+      MANDRILL_FROM_EMAIL: ${CONSENT_MANDRILL_FROM_EMAIL}
+      MANDRILL_FROM_NAME: ${CONSENT_MANDRILL_FROM_NAME}
+      PRIVACY_RIGHTS: ${CONSENT_PRIVACY_RIGHTS}
+      WITHDRAWAL_METHOD: ${CONSENT_WITHDRAWAL_METHOD}
+      CODE_OF_CONDUCT: ${CONSENT_CODE_OF_CONDUCT}
+      IMPACT_ASSESSMENT: ${CONSENT_IMPACT_ASSESSMENT}
+      AUTHORITY_PARTY: ${CONSENT_AUTHORITY_PARTY}
+    profiles:
+      - core
+    networks:
+      - ptx-main
+
+  provider-pdc:
+    container_name: "ptx-provider-pdc"
+    build:
+      context: .
+      dockerfile: images/provider-pdc/dockerfile
+    ports:
+      - "${PROVIDER_PDC_BINDING_PORT}:${PROVIDER_PDC_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    profiles:
+      - pdc
+    networks:
+      - ptx-main
+
+  consumer-pdc:
+    container_name: "ptx-consumer-pdc"
+    build:
+      context: .
+      dockerfile: images/consumer-pdc/dockerfile
+    ports:
+      - "${CONSUMER_PDC_BINDING_PORT}:${CONSUMER_PDC_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    profiles:
+      - pdc
+    networks:
+      - ptx-main
+
+networks:
+  ptx-main:
+    driver: bridge
+
+volumes:
+  mongodb_data:

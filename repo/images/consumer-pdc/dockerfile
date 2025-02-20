@@ -1,0 +1,15 @@
+FROM node:lts
+
+RUN npm install -g pnpm
+
+WORKDIR /usr/src/app
+
+RUN git clone https://github.com/Prometheus-X-association/dataspace-connector.git .
+
+RUN pnpm i
+
+COPY ./images/consumer-pdc/.env.production .
+COPY ./images/consumer-pdc/config.production.json ./src/config.production.json
+
+#Command to run the application
+CMD ["sh", "-c", "pnpm run build && pnpm run start"]

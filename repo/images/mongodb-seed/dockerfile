@@ -1,0 +1,27 @@
+FROM mongo
+
+#database from .env
+ARG CATALOG_REGISTRY_MONGO_DATABASE
+ARG CATALOG_MONGO_DATABASE
+ARG CONTRACT_MONGO_DATABASE
+ARG CONSENT_MONGO_DATABASE
+ARG PROVIDER_PDC_DATABASE
+ARG CONSUMER_PDC_DATABASE
+
+#Copy the content of the init directory to the root
+COPY ./init/ /
+
+#import json into collections
+CMD mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection organizationadmins --type json --file /catalog.organizationadmins.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection services --type json --file /catalog.services.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection globaldatatypes --type json --file /catalog.globaldatatypes.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection globalpurposes --type json --file /catalog.globalpurposes.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection participants --type json --file /catalog.participants.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection dataresources --type json --file /catalog.dataresources.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection softwareresources --type json --file /catalog.softwareresources.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection ecosystems --type json --file /catalog.ecosystems.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection datarepresentations --type json --file /catalog.datarepresentations.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection softwarerepresentations --type json --file /catalog.softwarerepresentations.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection serviceofferings --type json --file /catalog.serviceofferings.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection infrastructureservices --type json --file /catalog.infrastructureservices.json --jsonArray && \
+mongoimport --host mongodb --db CONTRACT_MONGO_DATABASE --collection contracts --type json --file /contract.contracts.json --jsonArray

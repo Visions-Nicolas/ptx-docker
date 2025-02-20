@@ -1,0 +1,28 @@
+[
+  {
+    "_id": {"$oid": "66d18695ee71f9f096bae7c8"},
+    "code": null,
+    "codeVerified": true,
+    "email": "test-dataprovider@yopmail.com",
+    "firstName": "Test",
+    "lastName": "DataProvider",
+    "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+    "password": "$2a$08$8.5T0U1iUe7wqm.sq8ZfAORZ7IIgh7WfWqYtMIw/6z.v8ljlURILG",
+    "permissions": ["all"],
+    "roles": ["admin"],
+    "schema_version": "1"
+  },
+  {
+    "_id": {"$oid": "66d189e6ee71f9f096baebe3"},
+    "code": null,
+    "codeVerified": true,
+    "email": "test-dataconsumer@yopmail.com",
+    "firstName": "Participant",
+    "lastName": "One",
+    "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+    "password": "$2a$08$8.5T0U1iUe7wqm.sq8ZfAORZ7IIgh7WfWqYtMIw/6z.v8ljlURILG",
+    "permissions": ["all"],
+    "roles": ["admin"],
+    "schema_version": "1"
+  }
+]

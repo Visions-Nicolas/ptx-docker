@@ -1,0 +1,29 @@
+[
+  {
+    "_id": {"$oid": "66d18bf6ee71f9f096baed63"},
+    "credential": "",
+    "method": "none",
+    "queryParams": ["page", "limit", "ontology"],
+    "resourceID": "66d18bf6ee71f9f096baed58",
+    "type": "REST",
+    "url": "http://localhost:3332/users"
+  },
+  {
+    "_id": {"$oid": "672c8acc870a096712ca5668"},
+    "credential": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "672c8acc870a096712ca565d",
+    "type": "REST",
+    "url": "http://localhost:3332/users/{userId}"
+  },
+  {
+    "_id": {"$oid": "679b78bde650f06f77f242b1"},
+    "credential": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "679b78bde650f06f77f242a6",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  }
+]

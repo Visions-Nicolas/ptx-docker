@@ -1,0 +1,12 @@
+FROM node:lts
+
+RUN npm install -g pnpm
+
+WORKDIR /usr/src/app
+
+RUN git clone https://github.com/Prometheus-X-association/contract-manager.git -b fix/build .
+
+RUN npm install --unsafe-perm
+
+#Command to run the application
+CMD ["sh", "-c", "pnpm run build && pnpm run start"]

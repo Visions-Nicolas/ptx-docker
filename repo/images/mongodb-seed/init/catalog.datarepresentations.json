@@ -1,0 +1,122 @@
+[
+  {
+    "_id": {"$oid": "66d1889cee71f9f096bae996"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": ["page", "limit", "skip"],
+    "resourceID": "66d1889cee71f9f096bae98b",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66d703f87c4c4e534b314b13"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66d703f87c4c4e534b314b0c",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66d96a519d8c10d289cdd64e"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66d96a519d8c10d289cdd643",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66d96a519d8c10d289cdd651"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66d96a519d8c10d289cdd643",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66e93582af4ce83aca803c1b"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66e93582af4ce83aca803c0c",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66e935db0247f7e4c40437aa"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66e935db0247f7e4c40437a1",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66e93690f8bf1540d314e143"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66e93690f8bf1540d314e137",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66e93690f8bf1540d314e148"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66e93690f8bf1540d314e137",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "66e937ef0b07ec6e1646cb1e"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66e937ef0b07ec6e1646cb0f",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users"
+  },
+  {
+    "_id": {"$oid": "672c8a28870a096712ca4e6d"},
+    "className": "",
+    "credential": "",
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "672c8a28870a096712ca4e63",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://localhost:3321/users/{userId}"
+  }
+]

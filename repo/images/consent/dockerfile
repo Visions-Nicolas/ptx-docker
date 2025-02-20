@@ -1,0 +1,20 @@
+FROM node:lts
+
+RUN npm install -g pnpm
+
+WORKDIR /usr/src/app
+
+RUN git clone https://github.com/Prometheus-X-association/consent-manager.git .
+
+RUN npm install --unsafe-perm
+
+#Create env
+RUN touch .env
+
+#Generate key
+RUN npm run generatePrivateKey
+RUN npm run generateAES
+RUN npm run generatePublicKey
+
+# Command to run the application
+CMD ["sh", "-c", "pnpm run build && pnpm run copyKeys && pnpm run start"]

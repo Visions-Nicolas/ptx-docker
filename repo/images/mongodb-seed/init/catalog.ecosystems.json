@@ -1,0 +1,969 @@
+[
+  {
+    "_id": {"$oid": "66d5ca6dee2e83a3f9eb92ec"},
+    "administrator": {"$oid": "66d18724ee71f9f096bae80f"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb92ff"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb9300"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb9301"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "67222aee85539771002f0abf",
+    "country_or_region": "",
+    "dataProcessingChains": [
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "673cbc792180f6c65a503f11",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8a"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "_id": {"$oid": "673ddc30f24a55c6c43b3e88"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42a"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "673cbc792180f6c65a503f11",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42b"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42c"}
+          }
+        ],
+        "_id": {"$oid": "673ddca9db3b1ce116aec429"}
+      }
+    ],
+    "description": "azdazdazd",
+    "detailedDescription": "<p>zadad</p>",
+    "infrastructureServices": [
+      {
+        "infrastructureService": "673cbc792180f6c65a503f11",
+        "participant": "66d18a1dee71f9f096baec08",
+        "status": "Signed",
+        "_id": {"$oid": "673cbd4f2180f6c65a504682"}
+      }
+    ],
+    "invitations": [
+      {
+        "organization": {"$oid": "6683f357aeb4c3a6a0d21b4e"},
+        "participant": "6683f357aeb4c3a6a0d21b4f",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "status": "Signed",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "67a1ef26d3dfebdf79a817ed"},
+        "offerings": [
+          {
+            "serviceOffering": "6683f4daaeb4c3a6a0d226d3",
+            "policy": [
+              {
+                "ruleId": "rule-access-4",
+                "values": {
+                  "target": "6683f4daaeb4c3a6a0d226d3",
+                  "value": 0
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "_id": {"$oid": "67a1ef26d3dfebdf79a817f0"}
+          }
+        ]
+      },
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec08"},
+        "participant": "66d18a1dee71f9f096baec07",
+        "roles": ["http://localhost:3000/static/references/roles/serviceProviderForIndividuals.json", "http://localhost:3000/static/references/roles/serviceProviderForOrganisations.json"],
+        "status": "Pending",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "67a1f00dd3dfebdf79a834df"},
+        "offerings": []
+      }
+    ],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "dadazd",
+    "orchestrator": "66d18724ee71f9f096bae810",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "66d5ca6dee2e83a3f9eb92ed"},
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "679b856f0d15555807c3d07b"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "679b856f0d15555807c3d07a"}
+          }
+        ]
+      },
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["infrastructureProvider"],
+        "offerings": [
+          {
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0"
+                },
+                "_id": {"$oid": "679b99806e1355d3c5d92e0f"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "679b99806e1355d3c5d92e0e"}
+          }
+        ],
+        "infrastructureServices": [
+          {
+            "infrastructureService": "673cbc792180f6c65a503f11",
+            "participant": "66d18a1dee71f9f096baec08",
+            "status": "Signed",
+            "_id": {"$oid": "673cbd4f2180f6c65a504682"}
+          }
+        ],
+        "_id": {"$oid": "673cbdca2180f6c65a5046b1"}
+      },
+      {
+        "organization": {"$oid": "6683f357aeb4c3a6a0d21b4e"},
+        "participant": "6683f357aeb4c3a6a0d21b4f",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "offerings": [
+          {
+            "serviceOffering": "6683f4daaeb4c3a6a0d226d3",
+            "policy": [
+              {
+                "ruleId": "rule-access-4",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/6683f4daaeb4c3a6a0d226d3",
+                  "value": 0
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "pricingDescription": "",
+              "pricing": "0",
+              "currency": "",
+              "billingPeriod": "",
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "67a2163fd3dfebdf79a847f1"}
+          }
+        ],
+        "_id": {"$oid": "67a2163fd3dfebdf79a847ed"}
+      },
+      {
+        "organization": {"$oid": "6683f357aeb4c3a6a0d21b4e"},
+        "participant": "6683f357aeb4c3a6a0d21b4f",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "offerings": [
+          {
+            "serviceOffering": "6683f4daaeb4c3a6a0d226d3",
+            "policy": [
+              {
+                "ruleId": "rule-access-4",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/6683f4daaeb4c3a6a0d226d3",
+                  "value": 0
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": ["http://localhost:3000/static/references/pricing-model/dataBased.json"],
+              "pricingDescription": "desc",
+              "pricing": "750",
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "67a21bccdd24957f71f03637"}
+          }
+        ],
+        "_id": {"$oid": "67a21bccdd24957f71f03636"}
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "66d6c209f53ebff7e724fd0a"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "66d6c20af53ebff7e724fd2a"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "66d6c20af53ebff7e724fd2b"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "66d6c20af53ebff7e724fd2c"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "66d6c2094c4c9453f04db699",
+    "country_or_region": "",
+    "description": "fzefzfe",
+    "detailedDescription": "<p>azdazdazd</p>",
+    "invitations": [],
+    "joinRequests": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "datatypes": [],
+        "purposes": [],
+        "status": "Pending",
+        "offerings": [],
+        "_id": {"$oid": "672b6ab52c2593e7aa122358"}
+      }
+    ],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "test",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "66d6c209f53ebff7e724fd0b"},
+        "offerings": []
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "66e14fd9fcbc0b393bc0224d"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "66e14fd9fcbc0b393bc02271"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "66e14fd9fcbc0b393bc02272"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "66e14fd9fcbc0b393bc02273"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "66e14fd9cea2a793683beb37",
+    "country_or_region": "",
+    "description": "test",
+    "detailedDescription": "<p>test</p>",
+    "invitations": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "status": "Authorized",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "67222c870d2c93043daf6e2b"},
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "67222c870d2c93043daf6e2f"}
+              }
+            ],
+            "_id": {"$oid": "67222c870d2c93043daf6e2e"}
+          }
+        ]
+      }
+    ],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "test",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "66e14fd9fcbc0b393bc0224e"},
+        "offerings": []
+      },
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/dataProviderForOrganisationalData.json", "http://localhost:3000/static/references/roles/dataProviderForPersonalData.json"],
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "67222c870d2c93043daf6e2f"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "67222c870d2c93043daf6e2e"}
+          }
+        ],
+        "_id": {"$oid": "67222c930d2c93043daf7128"}
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "66e1ac62d570b047f5465ec8"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "66e1ac62d570b047f5465eec"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "66e1ac62d570b047f5465eed"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "66e1ac62d570b047f5465eee"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "66e1ac62cea2a793683beb57",
+    "country_or_region": "",
+    "description": "qdqd",
+    "detailedDescription": "<p>qzdqd</p>",
+    "invitations": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": [],
+        "status": "Authorized",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "66eae9787e18a564942c7af3"},
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "66eae9787e18a564942c7af7"}
+              }
+            ],
+            "_id": {"$oid": "66eae9787e18a564942c7af6"}
+          }
+        ]
+      }
+    ],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "zdqd",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "66e1ac62d570b047f5465ec9"},
+        "offerings": []
+      },
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": [],
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "66eae9787e18a564942c7af7"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "66eae9787e18a564942c7af6"}
+          }
+        ],
+        "_id": {"$oid": "67222aa60d2c93043daf5166"}
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "67222cd80d2c93043daf7aa2"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "67222cd80d2c93043daf7b76"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "67222cd80d2c93043daf7b77"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "67222cd80d2c93043daf7b78"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "67222cd885539771002f0c2f",
+    "country_or_region": "",
+    "description": "dfbdfb",
+    "detailedDescription": "<p>dfbdb</p>",
+    "invitations": [],
+    "joinRequests": [],
+    "location": "EU",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "fbefb",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "67222cd80d2c93043daf7aa3"},
+        "offerings": []
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "672b46fe2d8abac7e038bf03"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "672b46ff2d8abac7e038bfe3"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "672b46ff2d8abac7e038bfe4"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "672b46ff2d8abac7e038bfe5"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "672b46fe9d7fce1a5707f0d8",
+    "country_or_region": "",
+    "description": "azdazdazd",
+    "detailedDescription": "<p>azdadazd</p>",
+    "invitations": [],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "adazdazd",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "672b46fe2d8abac7e038bf04"},
+        "offerings": []
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "672c8994870a096712ca4662"},
+    "administrator": {"$oid": "66d18a1dee71f9f096baec07"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "672c8995870a096712ca4765"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "672c8995870a096712ca4766"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "672c8995870a096712ca4767"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "672c89942308b486f7d0bca1",
+    "country_or_region": "",
+    "description": "consent",
+    "detailedDescription": "<p>consent</p>",
+    "invitations": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/serviceProviderForIndividuals.json", "http://localhost:3000/static/references/roles/serviceProviderForOrganisations.json"],
+        "status": "Signed",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "672c8b86870a096712ca6235"},
+        "offerings": [
+          {
+            "serviceOffering": "672c89cb870a096712ca4d59",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "672c89cb870a096712ca4d59"
+                },
+                "_id": {"$oid": "672c8b86870a096712ca6239"}
+              }
+            ],
+            "_id": {"$oid": "672c8b86870a096712ca6238"}
+          }
+        ]
+      }
+    ],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "CONSENT",
+    "orchestrator": "66d18a1dee71f9f096baec08",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18a1dee71f9f096baec07"},
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "672c8994870a096712ca4663"},
+        "offerings": [
+          {
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/672c8ae4870a096712ca56d7"
+                },
+                "_id": {"$oid": "672c8a49870a096712ca5046"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "pricingDescription": "consent",
+              "pricing": "0",
+              "currency": "EUR",
+              "billingPeriod": "One shot",
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "672c8a49870a096712ca5045"}
+          }
+        ]
+      },
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/serviceProviderForIndividuals.json", "http://localhost:3000/static/references/roles/serviceProviderForOrganisations.json"],
+        "offerings": [
+          {
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/672c8ae4870a096712ca56d7"
+                },
+                "_id": {"$oid": "672c8b86870a096712ca6239"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "pricingDescription": "",
+              "pricing": "0",
+              "currency": "",
+              "billingPeriod": "",
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "672c8b97870a096712ca658a"}
+          }
+        ],
+        "_id": {"$oid": "672c8b97870a096712ca6586"}
+      },
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["http://localhost:3000/static/references/roles/serviceProviderForIndividuals.json", "http://localhost:3000/static/references/roles/serviceProviderForOrganisations.json"],
+        "offerings": [
+          {
+            "serviceOffering": "672c89cb870a096712ca4d59",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://host.docker.internal:4040/v1/catalog/serviceofferings/672c89cb870a096712ca4d59"
+                },
+                "_id": {"$oid": "672c8b86870a096712ca6239"}
+              }
+            ],
+            "pricing": {
+              "pricingModel": [],
+              "pricingDescription": "",
+              "pricing": "0",
+              "costPerAPICall": 0,
+              "setupFee": 0
+            },
+            "_id": {"$oid": "672c8bb3870a096712ca70c4"}
+          }
+        ],
+        "_id": {"$oid": "672c8bb3870a096712ca70c3"}
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "673df961746597946aa5763d"},
+    "administrator": {"$oid": "66d18724ee71f9f096bae80f"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "673df961746597946aa5775d"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "673df961746597946aa5775e"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "673df961746597946aa5775f"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": "673df961ae7dea3d6e192d67",
+    "country_or_region": "",
+    "description": "omiom",
+    "detailedDescription": "<p>iomiom</p>",
+    "invitations": [],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": ":o:i",
+    "orchestrator": "66d18724ee71f9f096bae810",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "673df961746597946aa5763e"},
+        "offerings": []
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [
+      {
+        "role": "http://localhost:3000/static/references/roles/endUser.json",
+        "ruleId": "rule-responsibility-3",
+        "values": {
+          "target": "673df961746597946aa5763d"
+        },
+        "_id": {"$oid": "673dfad2746597946aa57eec"}
+      }
+    ],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "published",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  },
+  {
+    "_id": {"$oid": "67b44d0c6e8a3e2d9f16bce1"},
+    "administrator": {"$oid": "66d18724ee71f9f096bae80f"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "67b44d0f6e8a3e2d9f16beba"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "67b44d0f6e8a3e2d9f16bebb"}
+      },
+      {
+        "buildingBlock": "http://localhost:3000/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "67b44d0f6e8a3e2d9f16bebc"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "context": [],
+    "contract": null,
+    "country_or_region": "",
+    "dataProcessingChains": [],
+    "description": "zefzef",
+    "detailedDescription": "<p>zfzef</p>",
+    "infrastructureServices": [],
+    "invitations": [],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "ecosystem_default.jpg",
+    "main_functionalities_needed": [],
+    "name": "zfzef",
+    "orchestrator": "66d18724ee71f9f096bae810",
+    "participants": [
+      {
+        "organization": {"$oid": "66d18724ee71f9f096bae80f"},
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "67b44d0c6e8a3e2d9f16bce2"},
+        "offerings": []
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedCategoriesDetails": [],
+    "searchedDataCategories": ["hard skills"],
+    "searchedDatatypes": [],
+    "searchedServiceCategories": ["adaptive learning"],
+    "searchedServices": [],
+    "status": "draft",
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  }
+]
