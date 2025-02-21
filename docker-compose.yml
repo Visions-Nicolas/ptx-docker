@@ -1,7 +1,6 @@
 services:
-
   mongodb:
-    container_name: "ptx-mongodb"
+    container_name: ${MONGODB_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/mongodb/dockerfile
@@ -15,9 +14,25 @@ services:
     networks:
       - ptx-main
 
+  template-preprocessor:
+    container_name: "template-preprocessor"
+    build:
+      context: .
+      dockerfile: ./images/template-preprocessor/dockerfile
+    volumes:
+      - ./images/mongodb-seed/init:/app/images/mongodb-seed/init
+      - ./images/mongodb-seed/template:/app/images/mongodb-seed/template
+      - ./.env:/app/.env
+    profiles:
+      - db
+    networks:
+      - ptx-main
+
   mongodb-seed:
-    container_name: "ptx-mongodb-seed"
-    build: ./images/mongodb-seed
+    container_name: ${MONGODB_SEED_DOCKER_NAME}
+    build:
+      context: ./images/mongodb-seed
+      dockerfile: dockerfile
     environment:
       CATALOG_REGISTRY_MONGO_DATABASE: ${CATALOG_REGISTRY_MONGO_DATABASE}
       CATALOG_MONGO_DATABASE: ${CATALOG_MONGO_DATABASE}
@@ -27,6 +42,7 @@ services:
       CONSUMER_PDC_DATABASE: ${CONSUMER_PDC_DATABASE}
     depends_on:
       - mongodb
+      - template-preprocessor
     restart: no
     profiles:
       - db
@@ -34,7 +50,7 @@ services:
       - ptx-main
 
   catalog-registry:
-    container_name: "ptx-catalog-registry"
+    container_name: ${CATALOG_REGISTRY_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/registry/dockerfile
@@ -60,7 +76,7 @@ services:
       - ptx-main
 
   catalog-api:
-    container_name: "ptx-catalog-api"
+    container_name: ${CATALOG_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/catalog/dockerfile
@@ -88,7 +104,7 @@ services:
       - ptx-main
 
   contract-manager:
-    container_name: "ptx-contract-manager"
+    container_name: ${CONTRACT_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/contract/dockerfile
@@ -118,7 +134,7 @@ services:
       - ptx-main
 
   consent-manager:
-    container_name: "ptx-consent-manager"
+    container_name: ${CONSENT_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/consent/dockerfile
@@ -166,7 +182,7 @@ services:
       - ptx-main
 
   provider-pdc:
-    container_name: "ptx-provider-pdc"
+    container_name: ${PROVIDER_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/provider-pdc/dockerfile
@@ -181,7 +197,7 @@ services:
       - ptx-main
 
   consumer-pdc:
-    container_name: "ptx-consumer-pdc"
+    container_name: ${CONSUMER_DOCKER_NAME}
     build:
       context: .
       dockerfile: images/consumer-pdc/dockerfile

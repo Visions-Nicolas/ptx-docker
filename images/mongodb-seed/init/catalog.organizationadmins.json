@@ -6,8 +6,8 @@
     "email": "test-dataprovider@yopmail.com",
     "firstName": "Test",
     "lastName": "DataProvider",
-    "organization": {"$oid": "66d18724ee71f9f096bae80f"},
-    "password": "$2a$08$8.5T0U1iUe7wqm.sq8ZfAORZ7IIgh7WfWqYtMIw/6z.v8ljlURILG",
+    "organization": {"$oid": "66d18724ee71f9f096bae810"},
+    "password": "$2b$10$nSTjO/Gvo1hfttJXLewX0OcU.q0.m8QnFRRm0roj3iGKIYEccNwwK",
     "permissions": ["all"],
     "roles": ["admin"],
     "schema_version": "1"
@@ -19,8 +19,8 @@
     "email": "test-dataconsumer@yopmail.com",
     "firstName": "Participant",
     "lastName": "One",
-    "organization": {"$oid": "66d18a1dee71f9f096baec07"},
-    "password": "$2a$08$8.5T0U1iUe7wqm.sq8ZfAORZ7IIgh7WfWqYtMIw/6z.v8ljlURILG",
+    "organization": {"$oid": "66d18a1dee71f9f096baec08"},
+    "password": "$2b$10$nSTjO/Gvo1hfttJXLewX0OcU.q0.m8QnFRRm0roj3iGKIYEccNwwK",
     "permissions": ["all"],
     "roles": ["admin"],
     "schema_version": "1"
