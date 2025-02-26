@@ -1,8 +1,8 @@
-/images/mongodb-seed/init/catalog.datarepresentations.json
+/images/mongodb-seed/init/catalog.representations.json
 /images/mongodb-seed/init/catalog.ecosystems.json
 /images/mongodb-seed/init/catalog.serviceofferings.json
-/images/mongodb-seed/init/catalog.softwarerepresentations.json
 /images/mongodb-seed/init/catalog.softwareresources.json
 /images/mongodb-seed/init/consent.participants.json
 /images/mongodb-seed/init/contract.contracts.json
 /images/mongodb-seed/init/test.json
+.env

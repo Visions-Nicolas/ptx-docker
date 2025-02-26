@@ -19,8 +19,12 @@ mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection participant
 mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection dataresources --type json --file /catalog.dataresources.json --jsonArray && \
 mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection softwareresources --type json --file /catalog.softwareresources.json --jsonArray && \
 mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection ecosystems --type json --file /catalog.ecosystems.json --jsonArray && \
-mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection datarepresentations --type json --file /catalog.datarepresentations.json --jsonArray && \
-mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection softwarerepresentations --type json --file /catalog.softwarerepresentations.json --jsonArray && \
+mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection representations --type json --file /catalog.representations.json --jsonArray && \
 mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection serviceofferings --type json --file /catalog.serviceofferings.json --jsonArray && \
 mongoimport --host mongodb --db $CATALOG_MONGO_DATABASE --collection infrastructureservices --type json --file /catalog.infrastructureservices.json --jsonArray && \
-mongoimport --host mongodb --db CONTRACT_MONGO_DATABASE --collection contracts --type json --file /contract.contracts.json --jsonArray
+mongoimport --host mongodb --db $CONTRACT_MONGO_DATABASE --collection contracts --type json --file /contract.contracts.json --jsonArray && \
+mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection participants --type json --file /consent.participants.json --jsonArray && \
+mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection users --type json --file /consent.users.json --jsonArray && \
+mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection useridentifiers --type json --file /consent.useridentifiers.json --jsonArray && \
+mongoimport --host mongodb --db $PROVIDER_PDC_DATABASE --collection users --type json --file /provider.users.json --jsonArray && \
+mongoimport --host mongodb --db $CONSUMER_PDC_DATABASE --collection users --type json --file /consumer.users.json --jsonArray

@@ -1,0 +1,16 @@
+[
+  {
+    "_id": {"$oid": "660fff4528678b2683bab15f"},
+    "email": "john@doe.com",
+    "firstName": "",
+    "identifiers": [],
+    "jsonld": "",
+    "lastName": "",
+    "oauth": {
+      "scopes": [],
+      "refreshToken": "5e3015c61353bf2a91f6d8b4997afb07f79b2f666bf34fdcb4c6ef59804c8420"
+    },
+    "password": "$2b$10$nSTjO/Gvo1hfttJXLewX0OcU.q0.m8QnFRRm0roj3iGKIYEccNwwK",
+    "schema_version": "v0.1.0"
+  }
+]

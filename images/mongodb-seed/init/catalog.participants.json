@@ -1,11 +1,8 @@
 [
   {
     "_id": {"$oid": "66d18724ee71f9f096bae810"},
-    "associatedOrganisation": "66d18724ee71f9f096bae80f",
-    "dataspaceConnectorAppKey": "",
-    "dataspaceEndpoint": "",
     "did": null,
-    "legalName": "Test-DataProvider",
+    "legalName": "Provider",
     "legalPerson": {
       "registrationNumber": "",
       "headquartersAddress": {
@@ -17,19 +14,54 @@
       "parentOrganization": [],
       "subOrganization": []
     },
-    "logo": "",
-    "permissions": [],
-    "plan": {},
+    "termsAndConditions": "",
+    "associatedOrganisation": "66d18724ee71f9f096bae80f",
+    "dataspaceConnectorAppKey": "",
+    "dataspaceEndpoint": "",
+    "serviceKey": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
+    "serviceSecretKey": "xxRfHgwyb8OGYVuvdn13fwa8glsaFFwzB12laHzqoPs0PFw7HcA1DP6X8wkqEfZ4feUTwfdXO9WHGzlPwstMrE4FJVllcIl5U4nG",
+    "urls": {
+      "consentExport": "",
+      "consentImport": "",
+      "dataExport": "",
+      "dataImport": ""
+    },
+    "schema_version": "1"
+  },
+  {
+    "_id": {"$oid": "6564aaebd853e8e05b1317c0"},
+    "did": null,
+    "legalName": "Consumer",
+    "legalPerson": {
+      "registrationNumber": "",
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "dataspaceConnectorAppKey": "",
+    "dataspaceEndpoint": "",
+    "serviceKey": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
+    "serviceSecretKey": "hmP5WG7vBFsj1fxNYWyzzO7zgczCBfkpfsu6TqpRxyshSBPqHXmXxPUCCisJTcqC6efrAf7KEMvYFzrtp2xkpWJWw8SueQ3BbN5H",
+    "urls": {
+      "consentExport": "",
+      "consentImport": "",
+      "dataExport": "",
+      "dataImport": ""
+    },
     "schema_version": "1",
     "termsAndConditions": ""
   },
   {
     "_id": {"$oid": "66d18a1dee71f9f096baec08"},
-    "associatedOrganisation": "66d18a1dee71f9f096baec07",
     "dataspaceConnectorAppKey": "",
     "dataspaceEndpoint": "",
     "did": null,
-    "legalName": "Test-DataConsumer",
+    "legalName": "Infrastructure",
     "legalPerson": {
       "registrationNumber": "",
       "headquartersAddress": {
@@ -41,10 +73,15 @@
       "parentOrganization": [],
       "subOrganization": []
     },
-    "logo": "",
-    "permissions": [],
-    "plan": {},
     "schema_version": "1",
-    "termsAndConditions": ""
+    "termsAndConditions": "",
+    "serviceKey": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpT",
+    "serviceSecretKey": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78w",
+    "urls": {
+      "consentExport": "",
+      "consentImport": "",
+      "dataExport": "",
+      "dataImport": ""
+    }
   }
 ]

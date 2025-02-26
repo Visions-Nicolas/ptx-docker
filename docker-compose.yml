@@ -7,8 +7,8 @@ services:
 #    Uncomment to connect mongodb container to mongo compass or another service
     ports:
       - "27018:27017"
-    volumes:
-      - mongodb_data:/data/db
+#    volumes:
+#      - mongodb_data:/data/db
     profiles:
       - db  
     networks:
@@ -196,6 +196,57 @@ services:
     networks:
       - ptx-main
 
+  provider-api:
+    container_name: ${PROVIDER_API_DOCKER_NAME}
+    build:
+      context: .
+      dockerfile: images/example-api/dockerfile
+    ports:
+      - "${PROVIDER_API_BINDING_PORT}:${PROVIDER_API_PORT}"
+    env_file:
+      - .env
+    environment:
+      FILE: ".env.provider"
+    working_dir: /usr/src/app
+    command: ["/bin/bash", "-c", "npm run provider-server"]
+    profiles:
+      - provider
+    networks:
+      - ptx-main
+
+  infrastructure-pdc:
+    container_name: ${INFRASTRUCTURE_DOCKER_NAME}
+    build:
+      context: .
+      dockerfile: images/infrastructure-pdc/dockerfile
+    ports:
+      - "${INFRASTRUCTURE_PDC_BINDING_PORT}:${INFRASTRUCTURE_PDC_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    profiles:
+      - infrastructure
+    networks:
+      - ptx-main
+
+  infrastructure-api:
+    container_name: ${INFRASTRUCTURE_API_DOCKER_NAME}
+    build:
+      context: .
+      dockerfile: images/example-api/dockerfile
+    ports:
+      - "${INFRASTRUCTURE_API_BINDING_PORT}:${INFRASTRUCTURE_API_PORT}"
+    env_file:
+      - .env
+    environment:
+      FILE: ".env.infrastructure"
+    working_dir: /usr/src/app
+    command: ["/bin/bash", "-c", "npm run infrastructure"]
+    profiles:
+      - infrastructure
+    networks:
+      - ptx-main
+
   consumer-pdc:
     container_name: ${CONSUMER_DOCKER_NAME}
     build:
@@ -208,6 +259,25 @@ services:
     working_dir: /usr/src/app
     profiles:
       - pdc
+      - consumer
+    networks:
+      - ptx-main
+
+  consumer-api:
+    container_name: ${CONSUMER_API_DOCKER_NAME}
+    build:
+      context: .
+      dockerfile: images/example-api/dockerfile
+    ports:
+      - "${CONSUMER_API_BINDING_PORT}:${CONSUMER_API_PORT}"
+    env_file:
+      - .env
+    working_dir: /usr/src/app
+    environment:
+      FILE: ".env.consumer"
+    command: ["/bin/bash", "-c", "npm run consumer"]
+    profiles:
+      - infrastructure
     networks:
       - ptx-main
 

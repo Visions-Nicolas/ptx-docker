@@ -1,291 +1,77 @@
 [
   {
     "_id": {"$oid": "5f8d9ea341184f59787e605a"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "determiner_mes_competences.svg",
-    "name": "Déterminer mes compétences",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Skills Matching",
-        "_id": {"$oid": "648354b54a01268513a41431"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6055"},
-      {"$oid": "5f8d9ea341184f59787e6056"},
-      {"$oid": "5f8d9ea341184f59787e6057"},
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6059"}
-    ],
-    "subGlobalPurposes": ["Déterminer mes soft skills", "Déterminer mes hard skills"]
+    "category": "Personalization",
+    "description": "Enables tailored experiences for users based on their preferences and behavior."
   },
   {
     "_id": {"$oid": "5f8d9ea341184f59787e605b"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "tenir_mon_dossier_a_jour.svg",
-    "name": "Tenir mon dossier à jour",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Keep my profile to date",
-        "_id": {"$oid": "648356ba4a01268513a4143f"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6055"},
-      {"$oid": "5f8d9ea341184f59787e6056"},
-      {"$oid": "5f8d9ea341184f59787e6057"},
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6059"}
-    ]
+    "category": "Market Research",
+    "description": "Supports the analysis of market trends and consumer behavior to inform business decisions."
   },
   {
     "_id": {"$oid": "5f8d9ea341184f59787e605c"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "trouver_un_emploi.svg",
-    "name": "Trouver un emploi",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Job matching",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6057"},
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6059"}
-    ],
-    "subGlobalPurposes": ["Trouver un stage", "Trouver une alternance", "Trouver un emploi"]
+    "category": "Health and Wellness",
+    "description": "Facilitates the development of health-related services and products that improve quality of life."
   },
   {
     "_id": {"$oid": "5f8d9ea341184f59787e605d"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "trouver_une_formation.svg",
-    "name": "Trouver une formation",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Training Matching",
-        "_id": {"$oid": "648355af4a01268513a41435"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6055"},
-      {"$oid": "5f8d9ea341184f59787e6056"},
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6059"}
-    ],
-    "subGlobalPurposes": ["Orientation", "Réorientation"]
+    "category": "Financial Analysis",
+    "description": "Provides insights for financial modeling, risk assessment, and investment strategies."
   },
   {
     "_id": {"$oid": "5f8d9ea341184f59787e605e"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "trouver_un_mentor.svg",
-    "name": "Trouver un mentor ",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Finding a mentor",
-        "_id": {"$oid": "648356694a01268513a41437"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6059"}
-    ]
+    "category": "Environmental Sustainability",
+    "description": "Supports initiatives that promote eco-friendly practices and reduce environmental impact."
   },
   {
     "_id": {"$oid": "60756219e4819710890a7f6d"},
-    "globalDatatypes": [
-      {"$oid": "5f8ed518651f1648e0d8162b"},
-      {"$oid": "5f8ed518651f1648e0d81629"},
-      {"$oid": "5f8ed518651f1648e0d8162a"},
-      {"$oid": "5f8ed518651f1648e0d8162c"},
-      {"$oid": "5f8ed518651f1648e0d8162d"}
-    ],
-    "icon": "construire_son_projet_professionnel.svg",
-    "name": "Construire son projet professionnel",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Career building",
-        "_id": {"$oid": "6483567f4a01268513a41439"}
-      }
-    ],
-    "servicesCategories": [
-      {"$oid": "5f8d9ea341184f59787e6059"},
-      {"$oid": "5f8d9ea341184f59787e6055"},
-      {"$oid": "5f8d9ea341184f59787e6057"},
-      {"$oid": "5f8d9ea341184f59787e6058"},
-      {"$oid": "5f8d9ea341184f59787e6056"}
-    ],
-    "subGlobalPurposes": ["Découverte des métiers compatibles avec mes compétences "]
+    "category": "Cybersecurity",
+    "description": "Enhances the security of digital systems and protects against cyber threats."
   },
   {
     "_id": {"$oid": "637cf5e821a33e9bccaf5892"},
-    "globalDatatypes": [],
-    "icon": "",
-    "name": "Se découvrir",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Discover myself",
-        "_id": {"$oid": "648356c54a01268513a41441"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Education and Learning",
+    "description": "Fosters personalized learning experiences and improves educational outcomes."
   },
   {
     "_id": {"$oid": "637cf60f21a33e9bccaf589b"},
-    "globalDatatypes": [],
-    "icon": "",
-    "name": "Développer son potentiel",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Develop potential",
-        "_id": {"$oid": "648356924a01268513a4143b"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Transportation and Logistics",
+    "description": "Optimizes transportation systems and supply chain management for increased efficiency."
   },
   {
     "_id": {"$oid": "637cf6ad21a33e9bccaf58b4"},
-    "globalDatatypes": [],
-    "icon": "",
-    "name": "Trouver un emploi CDI ou un job d'été",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Finding a summer job",
-        "_id": {"$oid": "648356a84a01268513a4143d"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Scientific Research",
+    "description": "Supports scientific discoveries and advancements in various fields of study."
   },
   {
     "_id": {"$oid": "648357411d2c11adaae558c7"},
-    "globalDatatypes": [],
-    "icon": "orientation_service.svg",
-    "name": "Orientation service",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Orientation service",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Customer Service",
+    "description": "Enhances customer support and service delivery through data-driven insights."
   },
   {
     "_id": {"$oid": "648357591d2c11adaae558c8"},
-    "globalDatatypes": [],
-    "icon": "skills_gap.svg",
-    "name": "Skills gap",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Skills gap",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Marketing and Advertising",
+    "description": "Informs targeted marketing strategies and improves advertising effectiveness."
   },
   {
     "_id": {"$oid": "6483576a1d2c11adaae558c9"},
-    "globalDatatypes": [],
-    "icon": "skills_forecasting.svg",
-    "name": "Skills forecasting",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Skills forecasting",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Public Policy and Governance",
+    "description": "Supports data-driven decision-making in public policy and governance."
   },
   {
     "_id": {"$oid": "648357821d2c11adaae558ca"},
-    "globalDatatypes": [],
-    "icon": "skills_analytics.svg",
-    "name": "Skills analytics",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Skills analytics",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Infrastructure Planning",
+    "description": "Optimizes infrastructure development and urban planning through data analysis."
   },
   {
     "_id": {"$oid": "648357941d2c11adaae558cb"},
-    "globalDatatypes": [],
-    "icon": "adaptive learning.svg",
-    "name": "Adaptive learning",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Adaptive learning",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Social Media and Networking",
+    "description": "Enhances social media platforms and online networking experiences."
   },
   {
     "_id": {"$oid": "648357aa1d2c11adaae558cc"},
-    "globalDatatypes": [],
-    "icon": "learning_analytics.svg",
-    "name": "Learning analytics",
-    "names": [
-      {
-        "lang": "en",
-        "name": "Learning analytics",
-        "_id": {"$oid": "6483559c4a01268513a41433"}
-      }
-    ],
-    "servicesCategories": [],
-    "subGlobalPurposes": []
+    "category": "Gaming and Entertainment",
+    "description": "Supports the development of engaging gaming and entertainment experiences."
   }
 ]
