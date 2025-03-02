@@ -319,21 +319,48 @@ The seed data is organized into several JSON files located in the `ptx-docker/im
 
 The seed data is automatically loaded into the MongoDB database using the provided templates, which are processed to match the variables defined in the `.env` file.
 
-#### The participant
+#### Catalog
 
-Two participant are created, you can login using: 
+##### Participant
+
+Within the catalog three participant are created, you can login using one of the following curl commands:
+
 ```bash
-{
-    "email": "test-dataprovider@yopmail.com",
+# Login as provider
+curl -X POST http://localhost:3000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "provider@yopmail.com",
     "password": "test"
-}
+  }'
 ```
+
 ```bash
-{
-    "email": "test-dataconsumer@yopmail.com",
+# Login as consumer
+curl -X POST http://localhost:3000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "consumer@yopmail.com",
     "password": "test"
-}
+  }'
 ```
+
+```bash
+# Login as infrastructure
+curl -X POST http://localhost:3000/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "infrastructure@yopmail.com",
+    "password": "test"
+  }'
+```
+
+##### Offer
+
+#### Connector
+
+
+
 
 ## Getting started
 

@@ -1,0 +1,89 @@
+[
+  {
+    "_id": {"$oid": "65eb2661a50cb6465d41865c"},
+    "clientID": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
+    "clientSecret": "xxRfHgwyb8OGYVuvdn13fwa8glsaFFwzB12laHzqoPs0PFw7HcA1DP6X8wkqEfZ4feUTwfdXO9WHGzlPwstMrE4FJVllcIl5U4nG",
+    "dataspaceEndpoint": "http://${PROVIDER_DOCKER_NAME}:${PROVIDER_PORT}/",
+    "did": "",
+    "email": "provider@yopmail.com",
+    "endpoints": {
+      "dataExport": "http://${PROVIDER_DOCKER_NAME}:${PROVIDER_PDC_PORT}/data/export",
+      "dataImport": "http://${PROVIDER_DOCKER_NAME}:${PROVIDER_PDC_PORT}/data/import",
+      "consentImport": "http://${PROVIDER_DOCKER_NAME}:${PROVIDER_PDC_PORT}/consent/import",
+      "consentExport": "http://${PROVIDER_DOCKER_NAME}:${PROVIDER_PDC_PORT}/consent/export"
+    },
+    "jsonld": "",
+    "legalName": "provider",
+    "legalPerson": {
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "registrationNumber": "",
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "schema_version": "v0.1.0",
+    "selfDescriptionURL": "http://${CATALOG_DOCKER_NAME}:${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810"
+  },
+  {
+    "_id": {"$oid": "65eb2661a50cb6465d41865a"},
+    "clientID": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpT",
+    "clientSecret": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78w",
+    "dataspaceEndpoint": "http://${INFRASTRUCTURE_DOCKER_NAME}:${INFRASTRUCTURE_PDC_PORT}/",
+    "did": "",
+    "email": "infrastructure@yopmail.com",
+    "endpoints": {
+      "dataExport": "http://${INFRASTRUCTURE_DOCKER_NAME}:${INFRASTRUCTURE_PDC_PORT}/data/export",
+      "dataImport": "http://${INFRASTRUCTURE_DOCKER_NAME}:${INFRASTRUCTURE_PDC_PORT}/data/import",
+      "consentImport": "http://${INFRASTRUCTURE_DOCKER_NAME}:${INFRASTRUCTURE_PDC_PORT}/consent/import",
+      "consentExport": "http://${INFRASTRUCTURE_DOCKER_NAME}:${INFRASTRUCTURE_PDC_PORT}/consent/export"
+    },
+    "jsonld": "",
+    "legalName": "infrastructure",
+    "legalPerson": {
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "registrationNumber": "",
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "schema_version": "v0.1.0",
+    "selfDescriptionURL": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08"
+  },
+  {
+    "_id": {"$oid": "65eb2661a50cb6465d41865b"},
+    "clientID": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
+    "clientSecret": "hmP5WG7vBFsj1fxNYWyzzO7zgczCBfkpfsu6TqpRxyshSBPqHXmXxPUCCisJTcqC6efrAf7KEMvYFzrtp2xkpWJWw8SueQ3BbN5H",
+    "dataspaceEndpoint": "http://${CONSUMER_DOCKER_NAME}:${CONSUMER_PDC_PORT}/",
+    "did": "",
+    "email": "consumer@yopmail.com",
+    "endpoints": {
+      "dataExport": "http://${CONSUMER_DOCKER_NAME}:${CONSUMER_PDC_PORT}/data/export",
+      "dataImport": "http://${CONSUMER_DOCKER_NAME}:${CONSUMER_PDC_PORT}/data/import",
+      "consentImport": "http://${CONSUMER_DOCKER_NAME}:${CONSUMER_PDC_PORT}/consent/import",
+      "consentExport": "http://${CONSUMER_DOCKER_NAME}:${CONSUMER_PDC_PORT}/consent/export"
+    },
+    "jsonld": "",
+    "legalName": "test-infrastructure",
+    "legalPerson": {
+      "headquartersAddress": {
+        "countryCode": ""
+      },
+      "legalAddress": {
+        "countryCode": ""
+      },
+      "registrationNumber": "",
+      "parentOrganization": [],
+      "subOrganization": []
+    },
+    "schema_version": "v0.1.0",
+    "selfDescriptionURL": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"
+  }
+]

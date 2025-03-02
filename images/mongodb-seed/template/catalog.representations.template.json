@@ -1,0 +1,53 @@
+[
+  {
+    "_id": {"$oid": "66d1889cee71f9f096bae996"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": ["page", "limit", "skip"],
+    "resourceID": "66d1889cee71f9f096bae98b",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://${PROVIDER_API_DOCKER_NAME}:${PROVIDER_API_PORT}/users"
+  },
+  {
+    "_id": {"$oid": "66d96a519d8c10d289cdd64e"},
+    "className": "",
+    "credential": null,
+    "fileType": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "66d96a519d8c10d289cdd643",
+    "sqlQuery": "",
+    "type": "REST",
+    "url": "http://${PROVIDER_API_DOCKER_NAME}:${PROVIDER_API_PORT}/users/{userId}"
+  },
+  {
+    "_id": {"$oid": "66d18bf6ee71f9f096baed63"},
+    "credential": "",
+    "method": "none",
+    "queryParams": ["page", "limit"],
+    "resourceID": "66d18bf6ee71f9f096baed58",
+    "type": "REST",
+    "url": "http://${CONSUMER_API_DOCKER_NAME}:${CONSUMER_API_PORT}/users"
+  },
+  {
+    "_id": {"$oid": "672c8acc870a096712ca5668"},
+    "credential": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "672c8acc870a096712ca565d",
+    "type": "REST",
+    "url": "http://${CONSUMER_API_DOCKER_NAME}:${CONSUMER_API_PORT}/users/{userId}"
+  },
+  {
+    "_id": {"$oid": "679b78bde650f06f77f242b1"},
+    "credential": "",
+    "method": "none",
+    "queryParams": [],
+    "resourceID": "679b78bde650f06f77f242a6",
+    "type": "REST",
+    "url": "http://${INFRASTRUCTURE_API_DOCKER_NAME}:${INFRAST_UCTUREAPI_PORT}/users"
+  }
+]

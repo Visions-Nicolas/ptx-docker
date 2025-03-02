@@ -1,0 +1,74 @@
+[
+  {
+    "_id": {"$oid": "66d18bf6ee71f9f096baed58"},
+    "aggregationOf": [],
+    "category": "637cf6ad21a33e9bccaf58b4",
+    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
+    "demo_link": "",
+    "description": "consumer default resource",
+    "isAPI": false,
+    "license": [],
+    "locationAddress": [
+      {
+        "countryCode": "WORLD",
+        "_id": {"$oid": "66d18bf6ee71f9f096baed59"}
+      }
+    ],
+    "name": "Consumption",
+    "policy": [],
+    "providedBy": "6564aaebd853e8e05b1317c0",
+    "relevant_project_link": "",
+    "representation": {"$oid": "66d18bf6ee71f9f096baed63"},
+    "schema_version": "1.1.0",
+    "usePII": false,
+    "users_clients": 0
+  },
+  {
+    "_id": {"$oid": "672c8acc870a096712ca565d"},
+    "aggregationOf": [],
+    "category": "637cf6ad21a33e9bccaf58b4",
+    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
+    "demo_link": "",
+    "description": "consumer consent resource",
+    "isAPI": false,
+    "license": [],
+    "locationAddress": [
+      {
+        "countryCode": "WORLD",
+        "_id": {"$oid": "672c8acc870a096712ca565e"}
+      }
+    ],
+    "name": "Consent consumption",
+    "policy": [],
+    "providedBy": "6564aaebd853e8e05b1317c0",
+    "relevant_project_link": "",
+    "representation": {"$oid": "672c8acc870a096712ca5668"},
+    "schema_version": "1.1.0",
+    "usePII": true,
+    "users_clients": 0
+  },
+  {
+    "_id": {"$oid": "679b78bde650f06f77f242a6"},
+    "aggregationOf": [],
+    "category": "5f8d9ea341184f59787e605c",
+    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08"],
+    "demo_link": "",
+    "description": "Infrastructure default resource",
+    "isAPI": false,
+    "license": [],
+    "locationAddress": [
+      {
+        "countryCode": "WORLD",
+        "_id": {"$oid": "679b78bde650f06f77f242a7"}
+      }
+    ],
+    "name": "Infrastructure resource",
+    "policy": [],
+    "providedBy": "66d18a1dee71f9f096baec08",
+    "relevant_project_link": "",
+    "representation": {"$oid": "679b78bde650f06f77f242b1"},
+    "schema_version": "1.1.0",
+    "usePII": false,
+    "users_clients": 0
+  }
+]
