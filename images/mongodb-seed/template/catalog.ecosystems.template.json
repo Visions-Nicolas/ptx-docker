@@ -1,0 +1,293 @@
+[
+  {
+    "_id": {"$oid": "66d5ca6dee2e83a3f9eb92ec"},
+    "buildingBlocks": [
+      {
+        "buildingBlock": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/building-block/contract.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/contract",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb92ff"}
+      },
+      {
+        "buildingBlock": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/building-block/identity.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/identity",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb9300"}
+      },
+      {
+        "buildingBlock": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/building-block/catalog.json",
+        "implementation": "https://dataspace.prometheus-x.org/building-blocks/catalog",
+        "_id": {"$oid": "66d5ca6fee2e83a3f9eb9301"}
+      }
+    ],
+    "businessLogic": {
+      "businessModel": [],
+      "roles": []
+    },
+    "contract": "67222aee85539771002f0abf",
+    "country_or_region": "",
+    "dataProcessingChains": [
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "_id": {"$oid": "67bf015e3182b4376cfe4d1c"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "672c89cb870a096712ca4d59",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "_id": {"$oid": "67bf015e3182b4376cfe4d1c"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "673cbc792180f6c65a503f11",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8a"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "_id": {"$oid": "673ddc30f24a55c6c43b3e88"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42a"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "672c8ae4870a096712ca56c9",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42b"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42c"}
+          }
+        ],
+        "_id": {"$oid": "673ddca9db3b1ce116aec429"}
+      }
+    ],
+    "description": "Demonstration project",
+    "infrastructureServices": [
+      {
+        "infrastructureService": "673cbc792180f6c65a503f11",
+        "participant": "66d18a1dee71f9f096baec08",
+        "status": "Signed",
+        "_id": {"$oid": "673cbd4f2180f6c65a504682"}
+      }
+    ],
+    "invitations": [
+      {
+        "participant": "6564aaebd853e8e05b1317c0",
+        "roles": ["http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/dataProviderForOrganisationalData.json", "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/dataProviderForPersonalData.json"],
+        "status": "Signed",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "67a1ef26d3dfebdf79a817ed"},
+        "offerings": [
+          {
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "66d18b79ee71f9f096baecb0"
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "_id": {"$oid": "67a1ef26d3dfebdf79a817f0"}
+          },
+          {
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "672c8ae4870a096712ca56d7"
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "_id": {"$oid": "67a1ef26d3dfebdf79a817f0"}
+          }
+        ]
+      },
+      {
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/serviceProviderForIndividuals.json", "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/serviceProviderForOrganisations.json"],
+        "status": "Pending",
+        "serviceOfferings": [""],
+        "_id": {"$oid": "67a1f00dd3dfebdf79a834df"},
+        "offerings": [
+          {
+          "serviceOffering": "672c8ae4870a096712ca56c9",
+          "policy": [
+            {
+              "ruleId": "rule-access-1",
+              "values": {
+                "target": "672c8ae4870a096712ca56c9"
+              },
+              "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+            }
+          ],
+          "_id": {"$oid": "67a1ef26d3dfebdf79a817f0"}
+        }
+        ]
+      }
+    ],
+    "joinRequests": [],
+    "location": "WORLD",
+    "logo": "",
+    "main_functionalities_needed": [],
+    "name": "Demonstration project",
+    "orchestrator": "66d18724ee71f9f096bae810",
+    "participants": [
+      {
+        "participant": "66d18724ee71f9f096bae810",
+        "roles": ["Orchestrator"],
+        "_id": {"$oid": "66d5ca6dee2e83a3f9eb92ed"},
+        "offerings": [
+          {
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+                },
+                "_id": {"$oid": "679b856f0d15555807c3d07b"}
+              }
+            ],
+            "_id": {"$oid": "679b856f0d15555807c3d07a"}
+          },
+          {
+            "serviceOffering": "672c89cb870a096712ca4d59",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59"
+                },
+                "_id": {"$oid": "679b856f0d15555807c3d07b"}
+              }
+            ],
+            "_id": {"$oid": "679b856f0d15555807c3d07a"}
+          }
+        ]
+      },
+      {
+        "participant": "66d18a1dee71f9f096baec08",
+        "roles": ["infrastructureProvider"],
+        "offerings": [
+          {
+            "serviceOffering": "672c8ae4870a096712ca56c9",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9"
+                },
+                "_id": {"$oid": "679b99806e1355d3c5d92e0f"}
+              }
+            ],
+            "_id": {"$oid": "679b99806e1355d3c5d92e0e"}
+          }
+        ],
+        "_id": {"$oid": "673cbdca2180f6c65a5046b1"}
+      },
+      {
+        "participant": "6564aaebd853e8e05b1317c0",
+        "roles": ["http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/dataProviderForOrganisationalData.json", "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/roles/dataProviderForPersonalData.json"],
+        "offerings": [
+          {
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+                  "value": 0
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "_id": {"$oid": "67a2163fd3dfebdf79a847f1"}
+          },
+          {
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "policy": [
+              {
+                "ruleId": "rule-access-1",
+                "values": {
+                  "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7",
+                  "value": 0
+                },
+                "_id": {"$oid": "67a1ef26d3dfebdf79a817f1"}
+              }
+            ],
+            "_id": {"$oid": "67a2163fd3dfebdf79a847f1"}
+          }
+        ],
+        "_id": {"$oid": "67a2163fd3dfebdf79a847ed"}
+      }
+    ],
+    "provides": [],
+    "rolesAndObligations": [],
+    "schema_version": "1.1.0",
+    "searchedData": [],
+    "searchedServices": [],
+    "target_audience": "",
+    "useCases": [
+      {"$oid": "6477027612bef26b5efbc6b3"}
+    ]
+  }
+]

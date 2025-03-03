@@ -1,0 +1,18 @@
+[
+  {
+    "_id": {"$oid": "65646d4320ec42ff2e719706"},
+    "email": "john@doe.com",
+    "password": "$2b$10$DNhAZ5dm6f2kSTb4tm/OVu1CtdLRfBSoD4omMyjDozlsA5YR21rcq",
+    "schema_version": "1",
+    "skills": "[\"office suite\", \"windows\"]",
+    "verified_email": true
+  },
+  {
+    "_id": {"$oid": "656473537815cf3703d26302"},
+    "email": "jane@doe.com",
+    "password": "$2b$10$4Wu5vW23yX5eiEtg4re8eOOxVkC.u784q4ZoofgepSYv8cL6nzPMO",
+    "schema_version": "1",
+    "skills": "[\"office suite\", \"windows\"]",
+    "verified_email": true
+  }
+]

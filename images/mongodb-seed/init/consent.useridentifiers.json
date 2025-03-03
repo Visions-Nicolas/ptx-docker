@@ -1,0 +1,18 @@
+[
+  {
+    "_id": {"$oid": "664f48fdc37cba87ff047f8b"},
+    "attachedParticipant": {"$oid": "65eb2661a50cb6465d41865c"},
+    "email": "john@doe.com",
+    "identifier": "65646d4320ec42ff2e719706",
+    "jsonld": "",
+    "schema_version": "v0.1.0"
+  },
+  {
+    "_id": {"$oid": "666037e537cc7512bb4e4e65"},
+    "attachedParticipant": {"$oid": "65eb2661a50cb6465d41865b"},
+    "email": "john@doe.com",
+    "identifier": "65646d4320ec42ff2e719706",
+    "jsonld": "",
+    "schema_version": "v0.1.0"
+  }
+]

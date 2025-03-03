@@ -1,0 +1,277 @@
+[
+  {
+    "_id": {"$oid": "66d187f4ee71f9f096bae8ca"},
+    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d1889cee71f9f096bae98b"],
+    "compliantServiceOfferingVC": "",
+    "dataAccountExport": [],
+    "dataProtectionRegime": [],
+    "dataResources": [
+      {"$oid": "66d1889cee71f9f096bae98b"}
+    ],
+    "dependsOn": [],
+    "description": "Provider default Offer",
+    "keywords": [],
+    "location": "WORLD",
+    "name": "Providing",
+    "policy": [
+      {
+        "@context": {
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+          }
+        },
+        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "title": {
+          "@type": "xsd/string",
+          "@value": "No Restriction"
+        },
+        "uid": "rule-access-1",
+        "name": "No Restriction",
+        "description": [
+          {
+            "@value": "CAN use data without any restrictions",
+            "@language": "en"
+          }
+        ],
+        "policy": {
+          "permission": [
+            {
+              "action": "use",
+              "target": "@{target}",
+              "constraint": []
+            }
+          ]
+        },
+        "requestedFields": ["target"]
+      }
+    ],
+    "providedBy": "66d18724ee71f9f096bae810",
+    "schema_version": "1.2.0",
+    "serviceOfferingVC": "",
+    "softwareResources": [],
+    "termsAndConditions": "",
+    "userInteraction": false
+  },
+  {
+    "_id": {"$oid": "66d18b79ee71f9f096baecb0"},
+    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/66d18bf6ee71f9f096baed58"],
+    "compliantServiceOfferingVC": "",
+    "dataAccountExport": [],
+    "dataProtectionRegime": [],
+    "dataResources": [],
+    "dependsOn": [],
+    "description": "Consumer default offer",
+    "keywords": [],
+    "location": "WORLD",
+    "name": "consuming",
+    "policy": [
+      {
+        "@context": {
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+          }
+        },
+        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "title": {
+          "@type": "xsd/string",
+          "@value": "No Restriction"
+        },
+        "uid": "rule-access-1",
+        "name": "No Restriction",
+        "description": [
+          {
+            "@value": "CAN use data without any restrictions",
+            "@language": "en"
+          }
+        ],
+        "policy": {
+          "permission": [
+            {
+              "action": "use",
+              "target": "@{target}",
+              "constraint": []
+            }
+          ]
+        },
+        "requestedFields": ["target"]
+      }
+    ],
+    "providedBy": "6564aaebd853e8e05b1317c0",
+    "schema_version": "1.2.0",
+    "serviceOfferingVC": "",
+    "softwareResources": [
+      {"$oid": "66d18bf6ee71f9f096baed58"}
+    ],
+    "termsAndConditions": "",
+    "userInteraction": false
+  },
+  {
+    "_id": {"$oid": "672c89cb870a096712ca4d59"},
+    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d96a519d8c10d289cdd643"],
+    "compliantServiceOfferingVC": "",
+    "dataAccountExport": [],
+    "dataProtectionRegime": [],
+    "dataResources": [
+      {"$oid": "66d96a519d8c10d289cdd643"}
+    ],
+    "dependsOn": [],
+    "description": "provider consent offer",
+    "keywords": [],
+    "location": "WORLD",
+    "name": "Consent provider",
+    "policy": [
+      {
+        "@context": {
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+          }
+        },
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "title": {
+          "@type": "xsd/string",
+          "@value": "No Restriction"
+        },
+        "uid": "rule-access-1",
+        "name": "No Restriction",
+        "description": [
+          {
+            "@value": "CAN use data without any restrictions",
+            "@language": "en"
+          }
+        ],
+        "policy": {
+          "permission": [
+            {
+              "action": "use",
+              "target": "@{target}",
+              "constraint": []
+            }
+          ]
+        },
+        "requestedFields": ["target"]
+      }
+    ],
+    "providedBy": "66d18724ee71f9f096bae810",
+    "schema_version": "1.2.0",
+    "serviceOfferingVC": "",
+    "softwareResources": [],
+    "termsAndConditions": "",
+    "userInteraction": false
+  },
+  {
+    "_id": {"$oid": "672c8ae4870a096712ca56d7"},
+    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/672c8acc870a096712ca565d"],
+    "compliantServiceOfferingVC": "",
+    "dataAccountExport": [],
+    "dataProtectionRegime": [],
+    "dataResources": [],
+    "dependsOn": [],
+    "description": "Consumer consent offer",
+    "keywords": [],
+    "location": "WORLD",
+    "name": "Consumer consent",
+    "policy": [
+      {
+        "@context": {
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+          }
+        },
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "title": {
+          "@type": "xsd/string",
+          "@value": "No Restriction"
+        },
+        "uid": "rule-access-1",
+        "name": "No Restriction",
+        "description": [
+          {
+            "@value": "CAN use data without any restrictions",
+            "@language": "en"
+          }
+        ],
+        "policy": {
+          "permission": [
+            {
+              "action": "use",
+              "target": "@{target}",
+              "constraint": []
+            }
+          ]
+        },
+        "requestedFields": ["target"]
+      }
+    ],
+    "providedBy": "6564aaebd853e8e05b1317c0",
+    "schema_version": "1.2.0",
+    "serviceOfferingVC": "",
+    "softwareResources": [
+      {"$oid": "672c8acc870a096712ca565d"}
+    ],
+    "termsAndConditions": "",
+    "userInteraction": false
+  },
+  {
+    "_id": {"$oid": "672c8ae4870a096712ca56c9"},
+    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/679b78bde650f06f77f242a6"],
+    "compliantServiceOfferingVC": "",
+    "dataAccountExport": [],
+    "dataProtectionRegime": [],
+    "dataResources": [],
+    "dependsOn": [],
+    "description": "Infrastructure default offer",
+    "keywords": [],
+    "location": "WORLD",
+    "name": "Infrastructure default offer",
+    "policy": [
+      {
+        "@context": {
+          "xsd": "http://www.w3.org/2001/XMLSchema#",
+          "description": {
+            "@id": "https://schema.org/description",
+            "@container": "@language"
+          }
+        },
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "title": {
+          "@type": "xsd/string",
+          "@value": "No Restriction"
+        },
+        "uid": "rule-access-1",
+        "name": "No Restriction",
+        "description": [
+          {
+            "@value": "CAN use data without any restrictions",
+            "@language": "en"
+          }
+        ],
+        "policy": {
+          "permission": [
+            {
+              "action": "use",
+              "target": "@{target}",
+              "constraint": []
+            }
+          ]
+        },
+        "requestedFields": ["target"]
+      }
+    ],
+    "providedBy": "66d18a1dee71f9f096baec08",
+    "schema_version": "1.2.0",
+    "serviceOfferingVC": "",
+    "softwareResources": [
+      {"$oid": "679b78bde650f06f77f242a6"}
+    ],
+    "termsAndConditions": "",
+    "userInteraction": false
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "_id": {"$oid": "67222aee85539771002f0abf"},
+    "dataProcessings": [
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "status": "active",
+        "catalogId": {"$oid": "67bf015e3182b4376cfe4d1c"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "672c89cb870a096712ca4d59",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "672c8ae4870a096712ca56d7",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "status":  "active",
+        "catalogId": {"$oid": "67bf015e3182b4376cfe4d1c"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e89"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "673cbc792180f6c65a503f11",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8a"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddc30f24a55c6c43b3e8b"}
+          }
+        ],
+        "status":  "active",
+        "catalogId": {"$oid": "673ddc30f24a55c6c43b3e88"}
+      },
+      {
+        "infrastructureServices": [
+          {
+            "participant": "66d18724ee71f9f096bae810",
+            "serviceOffering": "66d187f4ee71f9f096bae8ca",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42a"}
+          },
+          {
+            "participant": "66d18a1dee71f9f096baec08",
+            "serviceOffering": "672c8ae4870a096712ca56c9",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42b"}
+          },
+          {
+            "participant": "6564aaebd853e8e05b1317c0",
+            "serviceOffering": "66d18b79ee71f9f096baecb0",
+            "params": "[]",
+            "configuration": "",
+            "_id": {"$oid": "673ddca9db3b1ce116aec42c"}
+          }
+        ],
+        "status":  "active",
+        "catalogId": {"$oid": "673ddca9db3b1ce116aec429"}
+      }
+    ],
+    "ecosystem": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/ecosystems/66d5ca6dee2e83a3f9eb92ec",
+    "members": [
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
+        "role": "orchestrator",
+        "signature": "hasSigned"
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08",
+        "role": "infrastructure provider",
+        "signature": "hasSigned"
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
+        "role": "participant",
+        "signature": "hasSigned"
+      }
+    ],
+    "orchestrator": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
+    "purpose": [],
+    "revokedMembers": [],
+    "rolesAndObligations": [],
+    "serviceOfferings": [
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
+        "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
+        "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59",
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08",
+        "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9",
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
+        "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
+        "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7",
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "pending"
+  }
+]

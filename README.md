@@ -14,7 +14,11 @@ graph TD;
     G[consent-manager]
     H[provider-pdc]
     I[consumer-pdc]
+    J[provider-api]
     K[template-preprocessor]
+    L[consumer-api]
+    N[infrastructure-pdc]
+    M[infrastructure-api]
 
     subgraph db
         B
@@ -29,12 +33,22 @@ graph TD;
         G
     end
 
-    subgraph PDC
+    subgraph provider
         H
-        I
+        J
     end
 
-    B -->|Stores Data| J[mongodb_data]
+    subgraph consumer
+        I
+        L
+    end
+
+    subgraph infrastructure
+        M
+        N
+    end
+
+    B -->|Stores Data| O[mongodb_data]
     C -->|Seed| B
     K -->|Process template seed| C
     D --> B
@@ -43,13 +57,19 @@ graph TD;
     G --> B
     H --> B
     I --> B
+    J --> B
+    L --> B
+    N --> B
+    M --> B
 
     style db fill:#f9a,stroke:#333,stroke-width:2px;
     style Core fill:#a5f,stroke:#333,stroke-width:2px;
-    style PDC fill:#17a,stroke:#333,stroke-width:2px;
+    style provider fill:#17a,stroke:#333,stroke-width:2px;
+    style consumer fill:#17a,stroke:#333,stroke-width:2px;
+    style infrastructure fill:#17a,stroke:#333,stroke-width:2px;
 ```
 
-## Docker Compose Services
+### Docker Compose Services
 
 The `docker-compose.yml` file defines the services that make up the application. Each service is configured with its own settings, including build context, environment variables, ports, and dependencies. Below is a brief overview of the services defined in the `docker-compose.yml`:
 
@@ -58,10 +78,18 @@ The `docker-compose.yml` file defines the services that make up the application.
 1. **mongodb**: 
    - Container for MongoDB, the database used by the application.
    - Uses a volume for persistent data storage.
+   - Exposed on port `27018`.
 
 2. **mongodb-seed**: 
    - Initializes the MongoDB database with seed data.
    - Depends on the `mongodb` service to be running.
+   - Environment variables:
+     - `CATALOG_REGISTRY_MONGO_DATABASE`: Database name for the catalog registry.
+     - `CATALOG_MONGO_DATABASE`: Database name for the catalog.
+     - `CONTRACT_MONGO_DATABASE`: Database name for contracts.
+     - `CONSENT_MONGO_DATABASE`: Database name for consent management.
+     - `PROVIDER_PDC_DATABASE`: Database name for provider PDC.
+     - `CONSUMER_PDC_DATABASE`: Database name for consumer PDC.
 
 3. **template-preprocessor**: 
    - Processes templates for seed data initialization.
@@ -71,7 +99,7 @@ The `docker-compose.yml` file defines the services that make up the application.
    - Manages the catalog of items in the application.
    - Exposes ports defined by `CATALOG_REGISTRY_BINDING_PORT` and `CATALOG_REGISTRY_PORT`.
 
-5. [**catalog-api**](https://github.com/Prometheus-X-association/catalog-api): 
+5. [**catalog-api**](https://github.com/Prometheus-X-association/catalog-api):  
    - Provides an API for accessing catalog data.
    - Exposes ports defined by `CATALOG_BINDING_PORT` and `CATALOG_PORT`.
 
@@ -90,6 +118,16 @@ The `docker-compose.yml` file defines the services that make up the application.
 9. [**consumer-pdc**](https://github.com/Prometheus-X-association/dataspace-connector): 
    - Represents the consumer service.
    - Exposes ports defined by `CONSUMER_PDC_BINDING_PORT` and `CONSUMER_PDC_PORT`.
+
+10. [**infrastructure-pdc**](https://github.com/Prometheus-X-association/dataspace-connector): 
+    - Represents the infrastructure service.
+    - Exposes ports defined by `INFRASTRUCTURE_PDC_BINDING_PORT` and `INFRASTRUCTURE_PDC_PORT`.
+
+11. [**example-api**](https://github.com/VisionsOfficial/sandbox-participant.git)(consumer-api/provider-api/infrastructure-api): 
+    - Provides an API for infrastructure services.
+    - Exposes ports defined by `INFRASTRUCTURE_API_BINDING_PORT` and `INFRASTRUCTURE_API_PORT`.
+    - Exposes ports defined by `CONSUMER_API_BINDING_PORT` and `CONSUMER_API_PORT`.
+    - Exposes ports defined by `PROVIDER_API_BINDING_PORT` and `PROVIDER_API_PORT`.
 
 ### Profiles
 
@@ -115,12 +153,28 @@ Profiles can be combined to run multiple configurations at once.
      docker-compose --profile db up
      ```
 
-3. **PDC Profile**
-   - This profile includes the provider and consumer PDC services, which are essential for handling provider and consumer interactions within the application.
-   - To run the PDC profile, use the following command:
+3. **provider Profile**
+   - This profile includes the provider PDC service and an example API, which are essential for handling PDC interactions within the application.
+   - To run the provider profile, use the following command:
 
      ```bash
-     docker-compose --profile pdc up
+     docker-compose --profile provider up
+     ```
+
+4. **consumer Profile**
+   - This profile includes the consumer PDC service and an example API, which are essential for handling PDC interactions within the application.
+   - To run the consumer profile, use the following command:
+
+     ```bash
+     docker-compose --profile consumer up
+     ```
+
+5. **infrastructure Profile**
+   - This profile includes the infrastructure PDC service and an example API, which are essential for handling PDC interactions within the application.
+   - To run the infrastructure profile, use the following command:
+
+     ```bash
+     docker-compose --profile infrastructure up
      ```
 
 #### Running multiple Profiles
@@ -193,13 +247,17 @@ The `.env` file contains key-value pairs that specify various settings for the a
    - `CONSENT_BINDING_PORT`: Port exposed for external access.
    - `CONSENT_MONGO_*`: MongoDB configuration settings for the consent.
 
-5. **Provider and Consumer PDC**
+5. **Provider, Consumer and Infrastructure PDC**
    - `PROVIDER_PDC_PORT`: Port for the provider PDC service.
    - `PROVIDER_PDC_BINDING_PORT`: Port exposed for external access.
    - `CONSUMER_PDC_PORT`: Port for the consumer PDC service.
    - `CONSUMER_PDC_BINDING_PORT`: Port exposed for external access.
+   - `INFRASTRUCTURE_PDC_PORT`: Port for the infrastructure PDC service.
+   - `INFRASTRUCTURE_PDC_BINDING_PORT`: Port exposed for external access.
 
 6. **MongoDB**
+   - `MONGODB_DOCKER_NAME`: Name of the MongoDB Docker container.
+   - `MONGODB_SEED_DOCKER_NAME`: Name of the MongoDB seed Docker container.
    - `MONGODB_PORT`: Port for the MongoDB service.
    - `MONGODB_DOCKER_PORT`: Port used by the MongoDB container.
 
@@ -213,16 +271,20 @@ To customize the application, you can modify the values in the `.env` file accor
 
 Below is a summary of the internal and external ports used for each service defined in the `.env` file:
 
-| Service                | Internal Port | External Port | Description                                           |
-|-----------------------|---------------|---------------|-------------------------------------------------------|
-| **mongodb**           | 27017         | 27018         | The MongoDB database service.                         |
-| **mongodb-seed**      | N/A           | N/A           | Initializes the MongoDB database with seed data.     |
-| **catalog-registry**   | 3000          | 3000          | Manages the catalog of items in the application.      |
-| **catalog-api**       | 3001          | 4040          | Provides an API for accessing catalog data.           |
-| **contract-manager**  | 3002          | 8888          | Manages contracts within the application.             |
-| **consent-manager**   | 3003          | 8887          | Handles user consent management.                       |
-| **provider-pdc**      | 3004          | 3333          | Represents the provider service.                       |
-| **consumer-pdc**      | 3005          | 3334          | Represents the consumer service.                       |
+| Service                | Internal Port | External Port                      | Description                                           |
+|-----------------------|---------------|------------------------------------|-------------------------------------------------------|
+| **mongodb**           | 27017         | 27018                              | The MongoDB database service.                         |
+| **mongodb-seed**      | N/A           | N/A                                | Initializes the MongoDB database with seed data.     |
+| **catalog-registry**   | 3000          | [3000](http://localhost:3000/docs) | Manages the catalog of items in the application.      |
+| **catalog-api**       | 3001          | [4040](http://localhost:4040/docs) | Provides an API for accessing catalog data.           |
+| **contract-manager**  | 3002          | [8888](http://localhost:8888/docs) | Manages contracts within the application.             |
+| **consent-manager**   | 3003          | [8887](http://localhost:8887/docs) | Handles user consent management.                       |
+| **provider-pdc**      | 3004          | [3333](http://localhost:3333/docs) | Represents the provider service.                       |
+| **consumer-pdc**      | 3006          | [3335](http://localhost:3335/docs) | Represents the consumer service.                       |
+| **infrastructure-pdc**| 3008          | [3337](http://localhost:3337/docs) | Represents the infrastructure service.                 |
+| **provider-api**      | 3005          | [3334](http://localhost:3334) | Example API used in representation                 |
+| **consumer-api**      | 3007          | [3336](http://localhost:3336) | Example API used in representation                 |
+| **infrastructure-api**| 3009          | [3338](http://localhost:3338) | Example API used in representation                 |
 
 #### Explanation of Ports
 
@@ -252,23 +314,175 @@ The seed data is organized into several JSON files located in the `ptx-docker/im
 - **catalog.softwarerepresentations.json**: Details the software representations.
 - **catalog.softwareresources.json**: Lists the software resources available.
 - **contract.contracts.json**: Contains contract definitions between participants.
+- **consent.users.json**: Contains consent definitions for users.
+- **consent.useridentifiers.json**: Contains consent definitions for useridentifiers.
+- **consent.participants.json**: Contains consent definitions for participants.
 
 #### Usage
 
 The seed data is automatically loaded into the MongoDB database using the provided templates, which are processed to match the variables defined in the `.env` file.
 
-#### The participant
+#### Catalog
 
-Two participant are created, you can login using: 
+##### Participant
+
+Within the catalog three participant are created, you can login using one of the following curl commands:
+
 ```bash
-{
-    "email": "test-dataprovider@yopmail.com",
+# Login as provider
+curl -X POST http://localhost:4040/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "provider@yopmail.com",
     "password": "test"
-}
+  }'
 ```
+
 ```bash
-{
-    "email": "test-dataconsumer@yopmail.com",
+# Login as consumer
+curl -X POST http://localhost:4040/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "consumer@yopmail.com",
     "password": "test"
-}
+  }'
 ```
+
+```bash
+# Login as infrastructure
+curl -X POST http://localhost:4040/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "infrastructure@yopmail.com",
+    "password": "test"
+  }'
+```
+
+##### Offer
+
+#### Contract
+
+```bash
+# Get a contract
+curl -X GET http://localhost:8888/contracts/67222aee85539771002f0abf \
+  -H "Content-Type: application/json"
+```
+
+```bash
+# Contract for provider
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4NzI0ZWU3MWY5ZjA5NmJhZTgxMA== \
+  -H "Content-Type: application/json"
+```
+
+```bash
+# Contract for Consumer
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4YTFkZWU3MWY5ZjA5NmJhZWMwOA== \
+  -H "Content-Type: application/json" 
+```
+
+```bash
+# Contract for Infrastructure
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY1NjRhYWViZDg1M2U4ZTA1YjEzMTdjMA== \
+  -H "Content-Type: application/json" 
+```
+
+#### Connector
+##### Login
+```bash
+# Login as provider
+curl -X POST http://localhost:3333/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
+    "secretKey": "xxRfHgwyb8OGYVuvdn13fwa8glsaFFwzB12laHzqoPs0PFw7HcA1DP6X8wkqEfZ4feUTwfdXO9WHGzlPwstMrE4FJVllcIl5U4nG"
+  }'
+```
+
+```bash
+# Login as consumer
+curl -X POST http://localhost:3335/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
+    "secretKey": "hmP5WG7vBFsj1fxNYWyzzO7zgczCBfkpfsu6TqpRxyshSBPqHXmXxPUCCisJTcqC6efrAf7KEMvYFzrtp2xkpWJWw8SueQ3BbN5H"
+  }'
+```
+
+```bash
+# Login as infrastructure
+curl -X POST http://localhost:3337/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpT",
+    "secretKey": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78w"
+  }'
+```
+##### Exchange
+
+```bash
+# Trigger exchange on provider side
+curl -X POST http://localhost:3333/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+  }'
+```
+
+```bash
+# Trigger exchange on consumer side
+curl -X POST http://localhost:3335/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+  }'
+```
+
+## Getting started
+
+### Clone the project
+
+```bash
+git clone https://github.com/Prometheus-X-association/ptx-docker.git
+```
+
+### Copy the .env file
+
+```bash
+cp .env.sample .env
+```
+
+### Check the configuration
+
+```bash
+./check-configuration.sh
+```
+
+#### expected output
+
+```bash
+✅  Configuration check passed
+```
+
+### Run the docker compose
+
+```bash
+docker compose --profile "*" up -d --build
+```
+
+## How to use a local pdc
+
+### As Provider
+
+### As Infrastructure
+
+### As Consumer
+
+## Troubleshooting
+
+### Known issue

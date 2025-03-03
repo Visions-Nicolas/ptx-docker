@@ -1,9 +1,9 @@
 {
   "consentUri": "http://ptx-consent-manager:3003/v1",
   "contractUri": "http://ptx-contract-manager:3002",
-  "endpoint": "http://consumer-pdc:3005/",
-  "secretKey": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78x",
-  "serviceKey": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpV",
+  "endpoint": "http://ptx-consumer-pdc:3006/",
+  "serviceKey": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
+  "secretKey": "hmP5WG7vBFsj1fxNYWyzzO7zgczCBfkpfsu6TqpRxyshSBPqHXmXxPUCCisJTcqC6efrAf7KEMvYFzrtp2xkpWJWw8SueQ3BbN5H",
   "catalogUri": "http://ptx-catalog-api:3001/v1",
   "expressLimitSize": "25mb"
 }
