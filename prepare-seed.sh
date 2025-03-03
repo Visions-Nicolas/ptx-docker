@@ -18,4 +18,5 @@ sed -i 's/[\x00-\x1F]//g' ./images/mongodb-seed/init/contract.contracts.json
 # Find and replace "_id": {"" with "_id": {"$oid" in each file
 for file in ./images/mongodb-seed/init/*.json; do
     sed -i 's/"_id": {""/"_id": {"$oid"/g' $file
+    sed -i 's/"": /"$oid": /g' $file
 done

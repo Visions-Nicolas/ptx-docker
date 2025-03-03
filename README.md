@@ -271,20 +271,20 @@ To customize the application, you can modify the values in the `.env` file accor
 
 Below is a summary of the internal and external ports used for each service defined in the `.env` file:
 
-| Service                | Internal Port | External Port | Description                                           |
-|-----------------------|---------------|---------------|-------------------------------------------------------|
-| **mongodb**           | 27017         | 27018         | The MongoDB database service.                         |
-| **mongodb-seed**      | N/A           | N/A           | Initializes the MongoDB database with seed data.     |
-| **catalog-registry**   | 3000          | 3000          | Manages the catalog of items in the application.      |
-| **catalog-api**       | 3001          | 4040          | Provides an API for accessing catalog data.           |
-| **contract-manager**  | 3002          | 8888          | Manages contracts within the application.             |
-| **consent-manager**   | 3003          | 8887          | Handles user consent management.                       |
-| **provider-pdc**      | 3004          | 3333          | Represents the provider service.                       |
-| **consumer-pdc**      | 3006          | 3335          | Represents the consumer service.                       |
-| **infrastructure-pdc**| 3008          | 3337          | Represents the infrastructure service.                 |
-| **provider-api**      | 3005          | 3334          | Example API used in representation                 |
-| **consumer-api**      | 3007          | 3336          | Example API used in representation                 |
-| **infrastructure-api**| 3009          | 3338          | Example API used in representation                 |
+| Service                | Internal Port | External Port                      | Description                                           |
+|-----------------------|---------------|------------------------------------|-------------------------------------------------------|
+| **mongodb**           | 27017         | 27018                              | The MongoDB database service.                         |
+| **mongodb-seed**      | N/A           | N/A                                | Initializes the MongoDB database with seed data.     |
+| **catalog-registry**   | 3000          | [3000](http://localhost:3000/docs) | Manages the catalog of items in the application.      |
+| **catalog-api**       | 3001          | [4040](http://localhost:4040/docs) | Provides an API for accessing catalog data.           |
+| **contract-manager**  | 3002          | [8888](http://localhost:8888/docs) | Manages contracts within the application.             |
+| **consent-manager**   | 3003          | [8887](http://localhost:8887/docs) | Handles user consent management.                       |
+| **provider-pdc**      | 3004          | [3333](http://localhost:3333/docs) | Represents the provider service.                       |
+| **consumer-pdc**      | 3006          | [3335](http://localhost:3335/docs) | Represents the consumer service.                       |
+| **infrastructure-pdc**| 3008          | [3337](http://localhost:3337/docs) | Represents the infrastructure service.                 |
+| **provider-api**      | 3005          | [3334](http://localhost:3334) | Example API used in representation                 |
+| **consumer-api**      | 3007          | [3336](http://localhost:3336) | Example API used in representation                 |
+| **infrastructure-api**| 3009          | [3338](http://localhost:3338) | Example API used in representation                 |
 
 #### Explanation of Ports
 
@@ -314,6 +314,9 @@ The seed data is organized into several JSON files located in the `ptx-docker/im
 - **catalog.softwarerepresentations.json**: Details the software representations.
 - **catalog.softwareresources.json**: Lists the software resources available.
 - **contract.contracts.json**: Contains contract definitions between participants.
+- **consent.users.json**: Contains consent definitions for users.
+- **consent.useridentifiers.json**: Contains consent definitions for useridentifiers.
+- **consent.participants.json**: Contains consent definitions for participants.
 
 #### Usage
 
@@ -327,7 +330,7 @@ Within the catalog three participant are created, you can login using one of the
 
 ```bash
 # Login as provider
-curl -X POST http://localhost:3000/auth/login \
+curl -X POST http://localhost:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "provider@yopmail.com",
@@ -337,7 +340,7 @@ curl -X POST http://localhost:3000/auth/login \
 
 ```bash
 # Login as consumer
-curl -X POST http://localhost:3000/auth/login \
+curl -X POST http://localhost:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "consumer@yopmail.com",
@@ -347,7 +350,7 @@ curl -X POST http://localhost:3000/auth/login \
 
 ```bash
 # Login as infrastructure
-curl -X POST http://localhost:3000/auth/login \
+curl -X POST http://localhost:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "infrastructure@yopmail.com",
@@ -357,10 +360,88 @@ curl -X POST http://localhost:3000/auth/login \
 
 ##### Offer
 
+#### Contract
+
+```bash
+# Get a contract
+curl -X GET http://localhost:8888/contracts/67222aee85539771002f0abf \
+  -H "Content-Type: application/json"
+```
+
+```bash
+# Contract for provider
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4NzI0ZWU3MWY5ZjA5NmJhZTgxMA== \
+  -H "Content-Type: application/json"
+```
+
+```bash
+# Contract for Consumer
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4YTFkZWU3MWY5ZjA5NmJhZWMwOA== \
+  -H "Content-Type: application/json" 
+```
+
+```bash
+# Contract for Infrastructure
+curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY1NjRhYWViZDg1M2U4ZTA1YjEzMTdjMA== \
+  -H "Content-Type: application/json" 
+```
+
 #### Connector
+##### Login
+```bash
+# Login as provider
+curl -X POST http://localhost:3333/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
+    "secretKey": "xxRfHgwyb8OGYVuvdn13fwa8glsaFFwzB12laHzqoPs0PFw7HcA1DP6X8wkqEfZ4feUTwfdXO9WHGzlPwstMrE4FJVllcIl5U4nG"
+  }'
+```
 
+```bash
+# Login as consumer
+curl -X POST http://localhost:3335/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
+    "secretKey": "hmP5WG7vBFsj1fxNYWyzzO7zgczCBfkpfsu6TqpRxyshSBPqHXmXxPUCCisJTcqC6efrAf7KEMvYFzrtp2xkpWJWw8SueQ3BbN5H"
+  }'
+```
 
+```bash
+# Login as infrastructure
+curl -X POST http://localhost:3337/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceKey": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpT",
+    "secretKey": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78w"
+  }'
+```
+##### Exchange
 
+```bash
+# Trigger exchange on provider side
+curl -X POST http://localhost:3333/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+  }'
+```
+
+```bash
+# Trigger exchange on consumer side
+curl -X POST http://localhost:3335/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+  }'
+```
 
 ## Getting started
 

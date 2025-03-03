@@ -100,16 +100,19 @@
     "ecosystem": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/ecosystems/66d5ca6dee2e83a3f9eb92ec",
     "members": [
       {
+        "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
+        "role": "orchestrator",
+        "signature": "hasSigned"
+      },
+      {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08",
         "role": "infrastructure provider",
-        "signature": "hasSigned",
-        "date": {"$date": "2024-11-19T16:33:14.368Z"}
+        "signature": "hasSigned"
       },
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
         "role": "participant",
-        "signature": "signed",
-        "date": {"$date": "2025-02-04T13:53:16.512Z"}
+        "signature": "hasSigned"
       }
     ],
     "orchestrator": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
@@ -120,92 +123,87 @@
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
         "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
-        "policies": {
-          "permission": [
-            {
-              "target": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"],
-              "action": ["use"],
-              "constraint": [
-                []
-              ],
-              "duty": [
-                []
-              ]
-            }
-          ]
-        }
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
       },
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18724ee71f9f096bae810",
         "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59",
-        "policies": {
-          "permission": [
-            {
-              "target": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59"],
-              "action": ["use"],
-              "constraint": [
-                []
-              ],
-              "duty": [
-                []
-              ]
-            }
-          ]
-        }
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c89cb870a096712ca4d59",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
       },
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08",
         "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9",
-        "policies": {
-          "permission": [
-            {
-              "target": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9"],
-              "action": ["use"],
-              "constraint": [
-                []
-              ],
-              "duty": [
-                []
-              ]
-            }
-          ]
-        }
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56c9",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
       },
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
         "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
-        "policies": {
-          "permission": [
-            {
-              "target": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0"],
-              "action": ["use"],
-              "constraint": [
-                []
-              ],
-              "duty": [
-                []
-              ]
-            }
-          ]
-        }
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
       },
       {
         "participant": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0",
         "serviceOffering": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7",
-        "policies": {
-          "permission": [
-            {
-              "target": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7"],
-              "action": ["use"],
-              "constraint": [
-                []
-              ],
-              "duty": [
-                []
-              ]
-            }
-          ]
-        }
+        "policies": [
+          {
+            "description": "CAN use data without any restrictions",
+            "permission": [
+              {
+                "target": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/serviceofferings/672c8ae4870a096712ca56d7",
+                "action": "use",
+                "constraint": [],
+                "duty": []
+              }
+            ]
+          }
+        ]
       }
     ],
     "status": "pending"

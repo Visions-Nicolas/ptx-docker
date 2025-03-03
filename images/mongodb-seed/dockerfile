@@ -7,6 +7,8 @@ ARG CONTRACT_MONGO_DATABASE
 ARG CONSENT_MONGO_DATABASE
 ARG PROVIDER_PDC_DATABASE
 ARG CONSUMER_PDC_DATABASE
+ARG PROVIDER_API_DATABASE
+ARG CONSUMER_API_DATABASE
 
 #Copy the content of the init directory to the root
 COPY ./init/ /
@@ -27,4 +29,6 @@ mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection participant
 mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection users --type json --file /consent.users.json --jsonArray && \
 mongoimport --host mongodb --db $CONSENT_MONGO_DATABASE --collection useridentifiers --type json --file /consent.useridentifiers.json --jsonArray && \
 mongoimport --host mongodb --db $PROVIDER_PDC_DATABASE --collection users --type json --file /provider.users.json --jsonArray && \
-mongoimport --host mongodb --db $CONSUMER_PDC_DATABASE --collection users --type json --file /consumer.users.json --jsonArray
+mongoimport --host mongodb --db $CONSUMER_PDC_DATABASE --collection users --type json --file /consumer.users.json --jsonArray && \
+mongoimport --host mongodb --db $PROVIDER_API_DATABASE --collection users --type json --file /example-api.users.json --jsonArray && \
+mongoimport --host mongodb --db $CONSUMER_API_DATABASE --collection users --type json --file /example-api.users.json --jsonArray

@@ -132,7 +132,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -185,7 +185,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -240,7 +240,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
