@@ -1,9 +1,9 @@
 {
-  "consentUri": "http://ptx-consent-manager:3003/v1",
-  "contractUri": "http://ptx-contract-manager:3002",
-  "endpoint": "http://ptx-provider-pdc:3004/",
+  "consentUri": "http://host.docker.internal:8887/v1",
+  "contractUri": "http://host.docker.internal:8888",
+  "endpoint": "http://host.docker.internal:3333/",
   "serviceKey": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
   "secretKey": "xxRfHgwyb8OGYVuvdn13fwa8glsaFFwzB12laHzqoPs0PFw7HcA1DP6X8wkqEfZ4feUTwfdXO9WHGzlPwstMrE4FJVllcIl5U4nG",
-  "catalogUri": "http://ptx-catalog-api:3001/v1",
+  "catalogUri": "http://host.docker.internal:4040/v1",
   "expressLimitSize": "25mb"
 }

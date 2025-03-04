@@ -1,7 +1,7 @@
 [
   {
     "_id": {"$oid": "66d187f4ee71f9f096bae8ca"},
-    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d1889cee71f9f096bae98b"],
+    "aggregationOf": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d1889cee71f9f096bae98b"],
     "compliantServiceOfferingVC": "",
     "dataAccountExport": [],
     "dataProtectionRegime": [],
@@ -22,7 +22,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "@id": "http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -56,7 +56,7 @@
   },
   {
     "_id": {"$oid": "66d18b79ee71f9f096baecb0"},
-    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/66d18bf6ee71f9f096baed58"],
+    "aggregationOf": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/66d18bf6ee71f9f096baed58"],
     "compliantServiceOfferingVC": "",
     "dataAccountExport": [],
     "dataProtectionRegime": [],
@@ -75,7 +75,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
+        "@id": "http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -111,7 +111,7 @@
   },
   {
     "_id": {"$oid": "672c89cb870a096712ca4d59"},
-    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d96a519d8c10d289cdd643"],
+    "aggregationOf": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/dataresources/66d96a519d8c10d289cdd643"],
     "compliantServiceOfferingVC": "",
     "dataAccountExport": [],
     "dataProtectionRegime": [],
@@ -132,7 +132,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "@id": "http://${GENERAL_URI}:${CATALOG_REGISTRY_BINDING_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -166,7 +166,7 @@
   },
   {
     "_id": {"$oid": "672c8ae4870a096712ca56d7"},
-    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/672c8acc870a096712ca565d"],
+    "aggregationOf": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/672c8acc870a096712ca565d"],
     "compliantServiceOfferingVC": "",
     "dataAccountExport": [],
     "dataProtectionRegime": [],
@@ -185,7 +185,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "@id": "http://${GENERAL_URI}:${CATALOG_REGISTRY_BINDING_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"
@@ -221,7 +221,7 @@
   },
   {
     "_id": {"$oid": "672c8ae4870a096712ca56c9"},
-    "aggregationOf": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/679b78bde650f06f77f242a6"],
+    "aggregationOf": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/softwareresources/679b78bde650f06f77f242a6"],
     "compliantServiceOfferingVC": "",
     "dataAccountExport": [],
     "dataProtectionRegime": [],
@@ -240,7 +240,7 @@
             "@container": "@language"
           }
         },
-        "@id": "http://${CATALOG_REGISTRY_DOCKER_NAME}:${CATALOG_REGISTRY_PORT}/static/references/rules/rule-access-1.json",
+        "@id": "http://${GENERAL_URI}:${CATALOG_REGISTRY_BINDING_PORT}/static/references/rules/rule-access-1.json",
         "title": {
           "@type": "xsd/string",
           "@value": "No Restriction"

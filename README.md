@@ -1,5 +1,37 @@
 # PTX-Docker
 
+## Getting started
+
+### Clone the project
+
+```bash
+git clone https://github.com/Prometheus-X-association/ptx-docker.git
+```
+
+### Copy the .env file
+
+```bash
+cp .env.sample .env
+```
+
+### Check the configuration
+
+```bash
+./check-configuration.sh
+```
+
+#### expected output
+
+```bash
+✅  Configuration check passed
+```
+
+### Run the docker compose
+
+```bash
+docker compose --profile "*" up -d --build
+```
+
 ## Overview
 
 The PTX-Docker project utilizes Docker Compose to provide a comprehensive PTX application environment. This setup allows for easy deployment, scaling, and management of the various components.
@@ -14,11 +46,11 @@ graph TD;
     G[consent-manager]
     H[provider-pdc]
     I[consumer-pdc]
-    J[provider-api]
+    J[example API: provider-api]
     K[template-preprocessor]
-    L[consumer-api]
+    L[example API: consumer-api]
     N[infrastructure-pdc]
-    M[infrastructure-api]
+    M[example API: infrastructure-api]
 
     subgraph db
         B
@@ -78,7 +110,7 @@ The `docker-compose.yml` file defines the services that make up the application.
 1. **mongodb**: 
    - Container for MongoDB, the database used by the application.
    - Uses a volume for persistent data storage.
-   - Exposed on port `27018`.
+   - Exposes ports defined by `MONGODB_PORT` and `MONGODB_DOCKER_PORT`.
 
 2. **mongodb-seed**: 
    - Initializes the MongoDB database with seed data.
@@ -261,6 +293,11 @@ The `.env` file contains key-value pairs that specify various settings for the a
    - `MONGODB_PORT`: Port for the MongoDB service.
    - `MONGODB_DOCKER_PORT`: Port used by the MongoDB container.
 
+7. **Global setting**
+   - `GLOBAL_URI`: by default `host.docker.internal` for Windows users but `172.17.0.1` can be used for linux user
+
+>The `GLOBAL_URI` environment variable allow to use through the machine localhost and inside the docker environment the same type of URI instead of using localhost on local and the name:port in the docker container
+
 #### Usage
 
 To customize the application, you can modify the values in the `.env` file according to your environment and requirements. Ensure that the `.env` file is present in the root directory of the project before running the Docker Compose commands.
@@ -330,7 +367,7 @@ Within the catalog three participant are created, you can login using one of the
 
 ```bash
 # Login as provider
-curl -X POST http://localhost:4040/v1/auth/login \
+curl -X POST http://host.docker.internal:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "provider@yopmail.com",
@@ -340,7 +377,7 @@ curl -X POST http://localhost:4040/v1/auth/login \
 
 ```bash
 # Login as consumer
-curl -X POST http://localhost:4040/v1/auth/login \
+curl -X POST http://host.docker.internal:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "consumer@yopmail.com",
@@ -350,7 +387,7 @@ curl -X POST http://localhost:4040/v1/auth/login \
 
 ```bash
 # Login as infrastructure
-curl -X POST http://localhost:4040/v1/auth/login \
+curl -X POST http://host.docker.internal:4040/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "infrastructure@yopmail.com",
@@ -364,25 +401,25 @@ curl -X POST http://localhost:4040/v1/auth/login \
 
 ```bash
 # Get a contract
-curl -X GET http://localhost:8888/contracts/67222aee85539771002f0abf \
+curl -X GET http://host.docker.internal:8888/contracts/67222aee85539771002f0abf \
   -H "Content-Type: application/json"
 ```
 
 ```bash
 # Contract for provider
-curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4NzI0ZWU3MWY5ZjA5NmJhZTgxMA== \
+curl -X GET http://host.docker.internal:8888/contracts/for/aHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjQwNDAvdjEvY2F0YWxvZy9wYXJ0aWNpcGFudHMvNjZkMTg3MjRlZTcxZjlmMDk2YmFlODEw \
   -H "Content-Type: application/json"
 ```
 
 ```bash
 # Contract for Consumer
-curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY2ZDE4YTFkZWU3MWY5ZjA5NmJhZWMwOA== \
+curl -X GET http://host.docker.internal:8888/contracts/for/aHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjQwNDAvdjEvY2F0YWxvZy9wYXJ0aWNpcGFudHMvNjZkMThhMWRlZTcxZjlmMDk2YmFlYzA4 \
   -H "Content-Type: application/json" 
 ```
 
 ```bash
 # Contract for Infrastructure
-curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaTozMDAxL3YxL2NhdGFsb2cvcGFydGljaXBhbnRzLzY1NjRhYWViZDg1M2U4ZTA1YjEzMTdjMA== \
+curl -X GET http://host.docker.internal:8888/contracts/for/aHR0cDovL2hvc3QuZG9ja2VyLmludGVybmFsOjQwNDAvdjEvY2F0YWxvZy9wYXJ0aWNpcGFudHMvNjU2NGFhZWJkODUzZThlMDViMTMxN2Mw \
   -H "Content-Type: application/json" 
 ```
 
@@ -390,7 +427,7 @@ curl -X GET http://localhost:8888/contracts/for/aHR0cDovL3B0eC1jYXRhbG9nLWFwaToz
 ##### Login
 ```bash
 # Login as provider
-curl -X POST http://localhost:3333/login \
+curl -X POST http://host.docker.internal:3333/login \
   -H "Content-Type: application/json" \
   -d '{
     "serviceKey": "MLLgUPxnnZLxOAu5tbl_p9Bx_GKJFWJLVkic4jHOirGJjD_6zEbzcCosAhCw7zV_VA9fPYy_vdRkZLuebUAUoQgjAPZGPuI9zaXg",
@@ -400,7 +437,7 @@ curl -X POST http://localhost:3333/login \
 
 ```bash
 # Login as consumer
-curl -X POST http://localhost:3335/login \
+curl -X POST http://host.docker.internal:3335/login \
   -H "Content-Type: application/json" \
   -d '{
     "serviceKey": "Gr31PY4J2SRCPdqS5eaGQPEB1Bk5WnucLE1heYoEm1DuwjnpPcOhhosS2s1hh1i9uVorj1GcN0kFLDfWC92TTx0iIaUBzs1UBmp1",
@@ -410,79 +447,430 @@ curl -X POST http://localhost:3335/login \
 
 ```bash
 # Login as infrastructure
-curl -X POST http://localhost:3337/login \
+curl -X POST http://host.docker.internal:3337/login \
   -H "Content-Type: application/json" \
   -d '{
     "serviceKey": "dWJUUKH9rYF9wr_UAPb6PQXW9h17G7dzuGCbiDhcyjCGgHzLwBp6QHOQhDg0FFxS24GD8nvw37oe_LOjl7ztNATYiVOd_ZEVHQpT",
     "secretKey": "Qh4XvuhSJbOp8nMV1JtibAUqjp3w_efBeFUfCmqQW_Nl8x4t3Sk6fWiK5L05CB3jhKZOgY5JlBSvWkFBHH_6fFhYQZWXNoZxO78w"
   }'
 ```
+
 ##### Exchange
 
 ```bash
 # Trigger exchange on provider side
-curl -X POST http://localhost:3333/consumer/exchange \
+curl -X POST http://host.docker.internal:3333/consumer/exchange \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $TOKEN" \
+  -H "Authorization: Bearer ${JWT_TOKEN}" \
   -d '{
-    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
-    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
-    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+    "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
   }'
 ```
 
 ```bash
 # Trigger exchange on consumer side
-curl -X POST http://localhost:3335/consumer/exchange \
+curl -X POST http://host.docker.internal:3335/consumer/exchange \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $TOKEN" \
+  -H "Authorization: Bearer ${JWT_TOKEN}" \
   -d '{
-    "contract": "http://ptx-contract-manager:3002/contracts/67222aee85539771002f0abf",
-    "purposeId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
-    "resourceId": "http://ptx-catalog-api:3001/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
+    "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca"
   }'
 ```
 
-## Getting started
+##### Consent based exchange
 
-### Clone the project
+##### Service chain protocol exchange
 
 ```bash
-git clone https://github.com/Prometheus-X-association/ptx-docker.git
+# Trigger exchange on provider side
+curl -X POST http://host.docker.internal:3333/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer  ${JWT_TOKEN}" \
+  -d '{
+    "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+    "dataProcessingId": "67bf015e3182b4376cfe4d1c"
+  }'
 ```
 
-### Copy the .env file
-
 ```bash
-cp .env.sample .env
+# Trigger exchange on consumer side
+curl -X POST http://host.docker.internal:3333/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer  ${JWT_TOKEN}" \
+  -d '{
+    "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+    "dataProcessingId": "673ddc30f24a55c6c43b3e88"
+  }'
 ```
 
-### Check the configuration
-
 ```bash
-./check-configuration.sh
-```
-
-#### expected output
-
-```bash
-✅  Configuration check passed
-```
-
-### Run the docker compose
-
-```bash
-docker compose --profile "*" up -d --build
+# Trigger exchange on consumer side
+curl -X POST http://host.docker.internal:3333/consumer/exchange \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${JWT_TOKEN}" \
+  -d '{
+    "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+    "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+    "resourceId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+    "dataProcessingId": "673ddca9db3b1ce116aec429"
+  }'
 ```
 
 ## How to use a local pdc
 
+> If you want to use a local API, you need to update the representation url of your role resource
+> 
+> You can use an [example api](https://github.com/VisionsOfficial/sandbox-participant) to run locally and customize it.
+
 ### As Provider
+
+```bash
+# if you use a local API, shutdown pdc and api
+docker rm -f ptx-provider-pdc provider-api
+```
+
+```bash
+# if you want to use the provided example API, shutdown provider pdc
+docker rm -f ptx-provider-pdc
+```
+
+```bash
+# copy the .env.production into you local pdc directory
+cp ./images/provider-pdc/.env.production ../your-connector-directory/.env.production
+```
+
+```bash
+# copy the config.production.json into you local pdc src directory
+cp ./images/provider-pdc/config.production.json ../your-connector-directory/src/config.production.json
+```
+
+> <details><summary>Using npm</summary>
+>
+> ```bash
+> #replace PORT and MONGO_URI
+> PORT=3333
+> MONGO_URI=mongodb://host.docker.internal:27018/ptx-provider
+> ```
+> 
+> ```bash
+> #in your local pdc directory if you're using npm
+> npm run build & npm run start
+> ```
+></details>
+
+> <details><summary>Using docker</summary>
+>
+> ```bash
+> #in your local pdc directory
+> docker compose up -d --build
+> ```
+>
+> ```bash
+> #add container to network
+> docker network connecto ptx-main dataspace-connector
+> ```
+></details>
 
 ### As Infrastructure
 
+```bash
+# if you use a local API, shutdown pdc and api
+docker rm -f ptx-infrastructure-pdc infrastructure-api
+```
+
+```bash
+# if you want to use the provided example API, shutdown consumer pdc
+docker rm -f ptx-infrastructure-pdc
+```
+
+```bash
+# copy the .env.production into you local pdc directory
+cp ./images/infrastructure-pdc/.env.production ../your-connector-directory/.env.production
+```
+
+```bash
+# copy the config.production.json into you local pdc src directory
+cp ./images/infrastructure-pdc/config.production.json ../your-connector-directory/src/config.production.json
+```
+
+> <details><summary>Using npm</summary>
+>
+> ```bash
+> #replace PORT and MONGO_URI
+> PORT=3337
+> MONGO_URI=mongodb://host.docker.internal:27018/ptx-infrastructure
+> ```
+>
+> ```bash
+> #in your local pdc directory if you're using npm
+> npm run build & npm run start
+> ```
+></details>
+
+> <details><summary>Using docker</summary>
+>
+> ```bash
+> #in your local pdc directory
+> docker compose up -d --build
+> ```
+>
+> ```bash
+> #add container to network
+> docker network connecto ptx-main dataspace-connector
+> ```
+></details>
+
 ### As Consumer
+
+```bash
+# if you use a local API, shutdown pdc and API
+docker rm -f ptx-consumer-pdc consumer-api
+```
+
+```bash
+# if you want to use the provided example API, shutdown consumer pdc
+docker rm -f ptx-consumer-pdc
+```
+
+```bash
+# copy the .env.production into you local pdc directory
+cp ./images/consumer-pdc/.env.production ../your-connector-directory/.env.production
+```
+
+```bash
+# copy the config.production.json into you local pdc src directory
+cp ./images/consumer-pdc/config.production.json ../your-connector-directory/src/config.production.json
+```
+
+> <details><summary>Using npm</summary>
+>
+> ```bash
+> #replace PORT and MONGO_URI
+> PORT=3335
+> MONGO_URI=mongodb://host.docker.internal:27018/ptx-consumer
+> ```
+>
+> ```bash
+> #in your local pdc directory if you're using npm
+> npm run build & npm run start
+> ```
+></details>
+
+> <details><summary>Using docker</summary>
+>
+> ```bash
+> #in your local pdc directory
+> docker compose up -d --build
+> ```
+>
+> ```bash
+> #add container to network
+> docker network connecto ptx-main dataspace-connector
+> ```
+></details>
+
+## How to log an exchange
+
+### PDC
+
+```bash
+docker logs --follow ptx-provider-pdc
+```
+
+```bash
+docker logs --follow ptx-infrastructure-pdc
+```
+
+```bash
+docker logs --follow ptx-consumer-pdc
+```
+
+> <details><summary>Example basic exchange expected output</summary>
+> provider-pdc
+>
+>![provider_logs](./docs/logs_provider.png)
+>
+>consumer-pdc
+> 
+> ![consumer_logs](./docs/consumer_logs.png)
+>
+></details>
+
+> <details><summary>Example service chain protocol expected output</summary>
+> provider-pdc
+>
+>![scp_provider_logs](./docs/scp_provider.png)
+>
+>consumer-pdc
+>
+> ![scp_consumer_logs](./docs/scp_consumer.png)
+>
+>
+>infrastructure-pdc
+>
+> ![infra_logs](./docs/scp_infra.png)
+>
+></details>
+> 
+
+
+### Example API
+
+```bash
+docker logs --follow provider-api
+```
+
+```bash
+docker logs --follow infrastructure-api
+```
+
+```bash
+docker logs --follow consumer-api
+```
+
+> <details><summary>Example basic exchange expected output</summary>
+> provider-api
+>
+>![provider_api_logs](./docs/provider_api_logs.png)
+>
+>consumer-api
+>
+> ![consumer_api_logs](./docs/consumer_api_logs.png)
+>
+></details>
+
+> <details><summary>Example service chain protocol expected output</summary>
+> provider-pdc
+>
+>![scp_provider_api_logs](./docs/scp_provider_api.png)
+>
+>consumer-pdc
+>
+> ![scp_consumer_api_logs](./docs/scp_consumer_api.png)
+>
+>
+>infrastructure-pdc
+>
+> ![infra_api_logs](./docs/scp_infra_api.png)
+>
+></details>
+>
+
+### Data exchange
+
+```bash
+# Get all data exchanges
+curl -X GET http://host.docker.internal:3333/dataexchanges \
+  -H "Content-Type: application/json"
+```
+
+> <details><summary>Expected output</summary>
+>
+> ```json
+> {
+>   "timestamp": 1741036561719,
+>   "code": 200,
+>   "content": [
+>     {
+>       "providerParams": {
+>         "query": []
+>       },
+>       "dataProcessing": {
+>         "infrastructureServices": []
+>       },
+>       "_id": "67c60fc97b40f523e9ecdc5f",
+>       "resources": [
+>         {
+>           "serviceOffering": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+>           "resource": "http://ptx-catalog-api:3001/v1/catalog/dataresources/66d1889cee71f9f096bae98b",
+>           "_id": "67c60fc97b40f523e9ecdc60"
+>         }
+>       ],
+>       "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+>       "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+>       "consumerEndpoint": "http://host.docker.internal:3335/",
+>       "status": "IMPORT_SUCCESS",
+>       "createdAt": "2025-03-03T20:23:37.220Z",
+>       "__v": 0,
+>       "consumerDataExchange": "67c60fc902619e9e0bffff1b"
+>     }
+>   ]
+> }
+>```
+>
+></details>
+
+```bash
+# Get one data exchange
+curl -X GET http://host.docker.internal:3333/dataexchanges/67c60fc97b40f523e9ecdc5f \
+  -H "Content-Type: application/json"
+```
+
+> <details><summary>Expected output</summary>
+>
+> ```json
+> {
+>   "timestamp": 1741040039681,
+>   "code": 200,
+>   "content": {
+>     "providerParams": {
+>       "query": []
+>     },
+>     "dataProcessing": {
+>       "infrastructureServices": []
+>     },
+>     "_id": "67c60fc97b40f523e9ecdc5f",
+>     "resources": [
+>       {
+>         "serviceOffering": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d187f4ee71f9f096bae8ca",
+>         "resource": "http://ptx-catalog-api:3001/v1/catalog/dataresources/66d1889cee71f9f096bae98b",
+>         "_id": "67c60fc97b40f523e9ecdc60"
+>       }
+>     ],
+>     "purposeId": "http://host.docker.internal:4040/v1/catalog/serviceofferings/66d18b79ee71f9f096baecb0",
+>     "contract": "http://host.docker.internal:8888/contracts/67222aee85539771002f0abf",
+>     "consumerEndpoint": "http://host.docker.internal:3335/",
+>     "status": "IMPORT_SUCCESS",
+>     "createdAt": "2025-03-03T20:23:37.220Z",
+>     "__v": 0,
+>     "consumerDataExchange": "67c60fc902619e9e0bffff1b"
+>   }
+> }
+>```
+>
+></details>
+
+> You can log the data exchange on all connector, the data exchange is synchronize through all the connector used during the exchange
+
+## How to add custom offer to an existing contract
+
+### Create a participant
+
+### Set up a connector
+
+### add a data resource or service resource
+
+### create an offer
+
+### joining an existing project
+
+### creating a project
+
+#### adding offer
 
 ## Troubleshooting
 
 ### Known issue
+
+- If you don't have the last version of one of the BB you can use the following command to clean the image used by docker
+```bash
+docker system prune -a
+```
