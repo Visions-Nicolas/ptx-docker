@@ -69,7 +69,9 @@
     "schema_version": "1.2.0",
     "serviceOfferingVC": "",
     "setupFee": 0,
-    "softwareResources": [],
+    "softwareResources": [
+      {"$oid": "679b78bde650f06f77f242a6"}
+    ],
     "status": "published",
     "termsAndConditions": "",
     "userInteraction": false,

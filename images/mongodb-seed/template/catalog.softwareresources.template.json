@@ -3,10 +3,10 @@
     "_id": {"$oid": "66d18bf6ee71f9f096baed58"},
     "aggregationOf": [],
     "category": "637cf6ad21a33e9bccaf58b4",
-    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
+    "copyrightOwnedBy": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
     "demo_link": "",
     "description": "consumer default resource",
-    "isAPI": false,
+    "isAPI": true,
     "license": [],
     "locationAddress": [
       {
@@ -27,10 +27,10 @@
     "_id": {"$oid": "672c8acc870a096712ca565d"},
     "aggregationOf": [],
     "category": "637cf6ad21a33e9bccaf58b4",
-    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
+    "copyrightOwnedBy": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/participants/6564aaebd853e8e05b1317c0"],
     "demo_link": "",
     "description": "consumer consent resource",
-    "isAPI": false,
+    "isAPI": true,
     "license": [],
     "locationAddress": [
       {
@@ -51,10 +51,10 @@
     "_id": {"$oid": "679b78bde650f06f77f242a6"},
     "aggregationOf": [],
     "category": "5f8d9ea341184f59787e605c",
-    "copyrightOwnedBy": ["http://${CATALOG_DOCKER_NAME}:${CATALOG_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08"],
+    "copyrightOwnedBy": ["http://${GENERAL_URI}:${CATALOG_BINDING_PORT}${CATALOG_API_PREFIX}/catalog/participants/66d18a1dee71f9f096baec08"],
     "demo_link": "",
     "description": "Infrastructure default resource",
-    "isAPI": false,
+    "isAPI": true,
     "license": [],
     "locationAddress": [
       {

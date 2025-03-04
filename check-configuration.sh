@@ -61,14 +61,14 @@ extract_port() {
     echo "$port"
 }
 
-consent_port=$(extract_port 'CONSENT_PORT')
+consent_port=$(extract_port 'CONSENT_BINDING_PORT')
 consent_api_prefix=$(extract_port 'CONSENT_API_PREFIX')
-catalog_port=$(extract_port 'CATALOG_PORT')
+catalog_port=$(extract_port 'CATALOG_BINDING_PORT')
 catalog_api_port=$(extract_port 'CATALOG_API_PREFIX')
-contract_port=$(extract_port 'CONTRACT_SERVER_PORT')
-consumer_port=$(extract_port 'CONSUMER_PDC_PORT')
-provider_port=$(extract_port 'PROVIDER_PDC_PORT')
-infrastructure_port=$(extract_port 'INFRASTRUCTURE_PDC_PORT')
+contract_port=$(extract_port 'CONTRACT_BINDING_PORT')
+consumer_port=$(extract_port 'CONSUMER_PDC_BINDING_PORT')
+provider_port=$(extract_port 'PROVIDER_PDC_BINDING_PORT')
+infrastructure_port=$(extract_port 'INFRASTRUCTURE_PDC_BINDING_PORT')
 provider_database=$(extract_port 'PROVIDER_PDC_DATABASE')
 consumer_database=$(extract_port 'CONSUMER_PDC_DATABASE')
 infrastructure_database=$(extract_port 'INFRASTRUCTURE_PDC_DATABASE')
@@ -78,6 +78,7 @@ consumer_api_port=$(extract_port 'CONSUMER_API_PORT')
 consumer_api_database=$(extract_port 'CONSUMER_API_DATABASE')
 infrastructure_api_port=$(extract_port 'INFRASTRUCTURE_API_PORT')
 infrastructure_api_database=$(extract_port 'INFRASTRUCTURE_API_DATABASE')
+general_uri=$(extract_port 'GENERAL_URI')
 
 mongodb=$(extract_port 'MONGODB_DOCKER_NAME')
 mongodb_port=$(extract_port 'MONGODB_DOCKER_PORT')
@@ -90,7 +91,7 @@ consumer=$(extract_port 'CONSUMER_DOCKER_NAME')
 infrastructure=$(extract_port 'INFRASTRUCTURE_DOCKER_NAME')
 
 # Construct the expected consentUri
-expected_consent_uri="http://$consent:$consent_port"
+expected_consent_uri="http://$general_uri:$consent_port"
 if [ -n "$consent_api_prefix" ]; then
   if [[ "$consent_api_prefix" != /* ]]; then
     expected_consent_uri+="/$consent_api_prefix"
@@ -100,7 +101,7 @@ if [ -n "$consent_api_prefix" ]; then
 fi
 
 # Construct the expected catalogUri
-expected_catalog_uri="http://$catalog:$catalog_port"
+expected_catalog_uri="http://$general_uri:$catalog_port"
 if [ -n "$catalog_api_port" ]; then
   if [[ "$catalog_api_port" != /* ]]; then
     expected_catalog_uri+="/$catalog_api_port"
@@ -110,12 +111,12 @@ if [ -n "$catalog_api_port" ]; then
 fi
 
 # Construct the expected catalogUri
-expected_contract_uri="http://$contract:$contract_port"
+expected_contract_uri="http://$general_uri:$contract_port"
 
 # Construct the expected catalogUri
-expected_consumer_endpoint_uri="http://$consumer:$consumer_port/"
-expected_provider_endpoint_uri="http://$provider:$provider_port/"
-expected_infrastructure_endpoint_uri="http://$infrastructure:$infrastructure_port/"
+expected_consumer_endpoint_uri="http://$general_uri:$consumer_port/"
+expected_provider_endpoint_uri="http://$general_uri:$provider_port/"
+expected_infrastructure_endpoint_uri="http://$general_uri:$infrastructure_port/"
 expected_provider_mongo_uri="mongodb://$mongodb:$mongodb_port/$provider_database"
 expected_consumer_mongo_uri="mongodb://$mongodb:$mongodb_port/$consumer_database"
 expected_infrastructure_mongo_uri="mongodb://$mongodb:$mongodb_port/$infrastructure_database"
