@@ -1462,12 +1462,14 @@ curl -X POST http://host.docker.internal:4040/v1/ecosystems \
 >```
 ></details>
 
-#### adding offer
+#### Inviting participant
 
-### joining an existing project
+#### Inviting Infrastructure
+
+### Joining an existing project
 
 ```bash
-# Offer
+# Create a Join request
 curl -X POST http://host.docker.internal:4040/v1/ecosystems/66d5ca6dee2e83a3f9eb92ec/requests \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2N2M2ZDU2ODc1ZDYxYWU5MmM5YzliMzQiLCJwYXJ0aWNpcGFudF9uYW1lIjoiUGFydGljaXBhbnQiLCJpYXQiOjE3NDExMDY5NjIsImV4cCI6MTc0MTExMDU2Mn0.Gsp83tPIC8dNdrUAfyoDoUCMJCqhHVY8rSzzzrp4WMg" \
